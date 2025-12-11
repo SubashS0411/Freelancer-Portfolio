@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas | Work</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'off-white': '#fbfbfe',
+                        'deep-black': '#050505',
+                        'accent': '#4f46e5',
+                        'matte-black': '#101010',
+                        'neon-lime': '#d9f99d',
+                    },
+                    fontFamily: {
+                        'syne': ['Syne', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden">
+
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-12">
+        <div
+            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border border-white/20 rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
+            <!-- Logo / Home Dropdown -->
+            <div class="relative group z-50">
+                <button
+                    class="flex items-center gap-1 font-syne font-bold text-xl md:text-2xl tracking-tighter hover:text-accent transition-colors">
+                    Home <i class="ph ph-caret-down text-base"></i>
+                </button>
+                <div
+                    class="dropdown-menu absolute top-full left-0 mt-4 w-48 bg-white/90 backdrop-blur-xl border border-black/10 rounded-xl p-2 shadow-2xl flex flex-col gap-1 z-50">
+                    <a href="index.html"
+                        class="px-4 py-2 hover:bg-black/5 rounded-lg font-inter text-sm font-medium flex justify-between items-center group/item text-deep-black">
+                        Home V1 <i
+                            class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                    </a>
+                    <a href="index2.html"
+                        class="px-4 py-2 hover:bg-black/5 rounded-lg font-inter text-sm font-medium flex justify-between items-center group/item text-deep-black">
+                        Home V2 <i
+                            class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-8 font-inter text-sm font-medium">
+                <a href="portfolio.html" class="text-accent font-bold transition-colors">Work</a>
+                <a href="index2.html" class="hover:text-accent transition-colors">Services</a>
+                <a href="about.html" class="hover:text-accent transition-colors">Notes</a>
+            </div>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#"
+                    class="px-4 py-2 border border-black/10 rounded-full text-sm font-inter font-medium hover:bg-black/5 transition-colors">Dashboard</a>
+                <a href="contact.html"
+                    class="px-6 py-2 bg-deep-black text-white rounded-full text-sm font-syne font-bold hover:bg-accent transition-colors">Let's
+                    Talk</a>
+                <button
+                    class="rtl-toggle-btn text-sm font-bold border border-deep-black/10 px-3 py-1 rounded-full hover:bg-white/50 transition-colors">RTL</button>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl"><i class="ph ph-list"></i></button>
+        </div>
+    </nav>
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-8 text-2xl font-syne font-bold">
+        <a href="portfolio.html">Work</a>
+        <a href="index2.html">Services</a>
+        <a href="about.html">Notes</a>
+        <a href="contact.html">Contact</a>
+        <button class="rtl-toggle-btn text-base px-6 py-2 border border-black rounded-full">Switch Direction</button>
+    </div>
+
+    <main class="pt-32 min-h-screen px-4 md:px-12 max-w-7xl mx-auto">
+
+        <header class="mb-16 text-center md:text-left">
+            <h1 class="font-syne font-bold text-6xl md:text-8xl mb-6">Selected Work</h1>
+            <div class="flex flex-wrap gap-4 md:gap-8 font-inter text-sm justify-center md:justify-start">
+                <button class="filter-btn active-filter text-accent font-bold hover:text-accent transition-colors"
+                    data-filter="all">All</button>
+                <button class="filter-btn text-gray-400 hover:text-deep-black transition-colors" data-filter="web">Web
+                    Development</button>
+                <button class="filter-btn text-gray-400 hover:text-deep-black transition-colors"
+                    data-filter="branding">Branding</button>
+                <button class="filter-btn text-gray-400 hover:text-deep-black transition-colors"
+                    data-filter="mobile">Mobile Apps</button>
+            </div>
+        </header>
+
+        <!-- Masonry Grid -->
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 pb-32">
+
+            <!-- Item 1 (Tall) -->
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden" data-category="web">
+                <img src="https://images.unsplash.com/photo-1481487484168-9b930d5b7d9d?auto=format&fit=crop&q=80&w=800"
+                    alt="Project"
+                    class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div
+                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button
+                        class="bg-white text-black px-6 py-3 rounded-full font-bold font-syne hover:scale-110 transition-transform">View
+                        Case Study</button>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-syne font-bold text-xl">Minimalist eCommerce</h3>
+                    <p class="text-sm text-gray-500 font-inter">Web Development</p>
+                </div>
+            </div>
+
+            <!-- Item 2 (Short) -->
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden"
+                data-category="branding">
+                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800"
+                    alt="Project"
+                    class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div
+                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button
+                        class="bg-white text-black px-6 py-3 rounded-full font-bold font-syne hover:scale-110 transition-transform">View
+                        Case Study</button>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-syne font-bold text-xl">Nordic Identity</h3>
+                    <p class="text-sm text-gray-500 font-inter">Branding</p>
+                </div>
+            </div>
+
+            <!-- Item 3 (Tall) -->
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden"
+                data-category="mobile">
+                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800"
+                    alt="Project"
+                    class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div
+                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button
+                        class="bg-white text-black px-6 py-3 rounded-full font-bold font-syne hover:scale-110 transition-transform">View
+                        Case Study</button>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-syne font-bold text-xl">Fitness Tracker</h3>
+                    <p class="text-sm text-gray-500 font-inter">Mobile App</p>
+                </div>
+            </div>
+
+            <!-- Item 4 (Medium) -->
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden" data-category="web">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=800"
+                    alt="Project"
+                    class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div
+                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button
+                        class="bg-white text-black px-6 py-3 rounded-full font-bold font-syne hover:scale-110 transition-transform">View
+                        Case Study</button>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-syne font-bold text-xl">Agency Portfolio</h3>
+                    <p class="text-sm text-gray-500 font-inter">Web Development</p>
+                </div>
+            </div>
+
+            <!-- Item 5 (Medium) -->
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden"
+                data-category="branding">
+                <img src="https://images.unsplash.com/photo-1600508774634-4e11d2557173?auto=format&fit=crop&q=80&w=800"
+                    alt="Project"
+                    class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div
+                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button
+                        class="bg-white text-black px-6 py-3 rounded-full font-bold font-syne hover:scale-110 transition-transform">View
+                        Case Study</button>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-syne font-bold text-xl">Coffee Co. Rebrand</h3>
+                    <p class="text-sm text-gray-500 font-inter">Branding</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <script src="js/rtl-toggle.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

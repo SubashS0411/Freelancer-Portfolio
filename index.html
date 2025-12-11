@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas | Creative Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'off-white': '#fbfbfe',
+                        'deep-black': '#050505',
+                        'accent': '#4f46e5',
+                        'matte-black': '#101010',
+                        'neon-lime': '#d9f99d',
+                    },
+                    fontFamily: {
+                        'syne': ['Syne', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden">
+
+    <!-- Cursor Follower Element -->
+    <div
+        class="cursor-follower fixed w-0 h-0 bg-cover bg-center pointer-events-none z-[9999] opacity-0 transition-opacity duration-300 rounded-lg shadow-2xl">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-12">
+        <div
+            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border border-white/20 rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
+
+            <!-- Logo / Home Dropdown -->
+            <div class="relative group z-50">
+                <button
+                    class="flex items-center gap-1 font-syne font-bold text-xl md:text-2xl tracking-tighter hover:text-accent transition-colors">
+                    Home <i class="ph ph-caret-down text-base"></i>
+                </button>
+                <div
+                    class="dropdown-menu absolute top-full left-0 mt-4 w-48 bg-white/90 backdrop-blur-xl border border-black/10 rounded-xl p-2 shadow-2xl flex flex-col gap-1 z-50">
+                    <a href="index.html"
+                        class="px-4 py-2 hover:bg-black/5 rounded-lg font-inter text-sm font-medium flex justify-between items-center group/item text-deep-black">
+                        Home V1 <i
+                            class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                    </a>
+                    <a href="index2.html"
+                        class="px-4 py-2 hover:bg-black/5 rounded-lg font-inter text-sm font-medium flex justify-between items-center group/item text-deep-black">
+                        Home V2 <i
+                            class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 font-inter text-sm font-medium">
+                <a href="portfolio.html" class="hover:text-accent transition-colors">Work</a>
+                <a href="index2.html" class="hover:text-accent transition-colors">Services</a>
+                <a href="about.html" class="hover:text-accent transition-colors">Notes</a>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#"
+                    class="px-4 py-2 border border-black/10 rounded-full text-sm font-inter font-medium hover:bg-black/5 transition-colors">Dashboard</a>
+                <a href="contact.html"
+                    class="px-6 py-2 bg-deep-black text-white rounded-full text-sm font-syne font-bold hover:bg-accent transition-colors">Let's
+                    Talk</a>
+                <button
+                    class="rtl-toggle-btn text-sm font-bold border border-deep-black/10 px-3 py-1 rounded-full hover:bg-white/50 transition-colors">RTL</button>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-8 text-2xl font-syne font-bold">
+        <a href="portfolio.html">Work</a>
+        <a href="index2.html">Services</a>
+        <a href="about.html">Notes</a>
+        <a href="contact.html">Contact</a>
+        <button class="rtl-toggle-btn text-base px-6 py-2 border border-black rounded-full">Switch Direction</button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-32 min-h-screen px-4 md:px-12 max-w-7xl mx-auto">
+
+        <!-- Hero Section -->
+        <section class="min-h-[70vh] flex flex-col justify-center mb-24">
+            <h1 class="font-syne font-bold text-5xl md:text-8xl leading-[1.1] tracking-tight mb-8">
+                Building digital products<br>
+                <span class="text-accent" id="typewriter">that matter.</span>
+            </h1>
+            <p class="font-inter text-gray-500 max-w-xl text-lg">
+                I help brands and founders turn abstract ideas into functional, award-winning digital experiences.
+            </p>
+        </section>
+
+        <!-- Process Section (New) -->
+        <section class="mb-32">
+            <h2 class="font-syne font-bold text-3xl mb-12">How it works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="space-y-4 group">
+                    <div class="text-6xl font-syne font-bold text-gray-200 group-hover:text-accent transition-colors">01
+                    </div>
+                    <h3 class="text-xl font-bold font-syne">Discovery</h3>
+                    <p class="text-sm text-gray-500 font-inter">Deep dive into your brand, goals, and audience
+                        requirements.</p>
+                </div>
+                <div class="space-y-4 group">
+                    <div class="text-6xl font-syne font-bold text-gray-200 group-hover:text-accent transition-colors">02
+                    </div>
+                    <h3 class="text-xl font-bold font-syne">Strategy</h3>
+                    <p class="text-sm text-gray-500 font-inter">Structuring the user journey and wireframing the
+                        experience.</p>
+                </div>
+                <div class="space-y-4 group">
+                    <div class="text-6xl font-syne font-bold text-gray-200 group-hover:text-accent transition-colors">03
+                    </div>
+                    <h3 class="text-xl font-bold font-syne">Design</h3>
+                    <p class="text-sm text-gray-500 font-inter">Crafting the visual identity with high-end aesthetics.
+                    </p>
+                </div>
+                <div class="space-y-4 group">
+                    <div class="text-6xl font-syne font-bold text-gray-200 group-hover:text-accent transition-colors">04
+                    </div>
+                    <h3 class="text-xl font-bold font-syne">Development</h3>
+                    <p class="text-sm text-gray-500 font-inter">Bringing pixels to life with clean, performant code.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Work (List View) -->
+        <section class="mb-32">
+            <div class="flex items-center justify-between mb-12 border-b border-black/10 pb-4">
+                <span class="font-inter text-sm uppercase tracking-widest text-gray-400">Selected Work (2023-24)</span>
+                <span class="font-inter text-sm text-gray-400">04</span>
+            </div>
+
+            <div class="flex flex-col">
+                <!-- Project Item 1 -->
+                <a href="portfolio.html"
+                    class="hover-reveal group flex items-baseline justify-between py-12 border-b border-black/10 hover:border-black transition-colors"
+                    data-img="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=600">
+                    <h2
+                        class="text-4xl md:text-6xl font-syne font-bold group-hover:translate-x-4 transition-transform duration-300">
+                        Fintech Dashboard</h2>
+                    <span class="font-inter text-gray-400">Development</span>
+                </a>
+
+                <!-- Project Item 2 -->
+                <a href="portfolio.html"
+                    class="hover-reveal group flex items-baseline justify-between py-12 border-b border-black/10 hover:border-black transition-colors"
+                    data-img="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600">
+                    <h2
+                        class="text-4xl md:text-6xl font-syne font-bold group-hover:translate-x-4 transition-transform duration-300">
+                        Neon Brand</h2>
+                    <span class="font-inter text-gray-400">Identity / Web</span>
+                </a>
+
+                <!-- Project Item 3 -->
+                <a href="portfolio.html"
+                    class="hover-reveal group flex items-baseline justify-between py-12 border-b border-black/10 hover:border-black transition-colors"
+                    data-img="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600">
+                    <h2
+                        class="text-4xl md:text-6xl font-syne font-bold group-hover:translate-x-4 transition-transform duration-300">
+                        Arkitect Studio</h2>
+                    <span class="font-inter text-gray-400">Design</span>
+                </a>
+                <!-- Project Item 4 -->
+                <a href="portfolio.html"
+                    class="hover-reveal group flex items-baseline justify-between py-12 border-b border-black/10 hover:border-black transition-colors"
+                    data-img="https://images.unsplash.com/photo-1558655146-d09347e0b7a8?auto=format&fit=crop&q=80&w=600">
+                    <h2
+                        class="text-4xl md:text-6xl font-syne font-bold group-hover:translate-x-4 transition-transform duration-300">
+                        Velvet App</h2>
+                    <span class="font-inter text-gray-400">Mobile</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Infinite Ticker -->
+    <div class="w-full bg-deep-black text-off-white overflow-hidden py-4 mb-24">
+        <div
+            class="whitespace-nowrap animate-marquee flex gap-12 font-syne font-bold text-2xl uppercase tracking-wider">
+            <!-- Duplicated content for seamless loop (CSS animation needed in style.css for 'animate-marquee' if not in Tailwind extensions, or use arbitrary values) -->
+            <span>Strategy • Design • Development • Deployment •</span>
+            <span>Strategy • Design • Development • Deployment •</span>
+            <span>Strategy • Design • Development • Deployment •</span>
+            <span>Strategy • Design • Development • Deployment •</span>
+            <span>Strategy • Design • Development • Deployment •</span>
+            <span>Strategy • Design • Development • Deployment •</span>
+        </div>
+    </div>
+
+    <!-- Footer CTA -->
+    <footer class="px-4 md:px-12 max-w-7xl mx-auto pb-24">
+        <a href="contact.html" class="group block">
+            <h2 class="text-[12vw] leading-none font-syne font-bold hover:text-accent transition-colors">
+                Have an idea? <br>
+                <span class="group-hover:ml-12 transition-all duration-500">Tell me everything.</span>
+            </h2>
+        </a>
+        <div
+            class="flex justify-between items-end mt-12 border-t border-black/10 pt-8 font-inter text-sm text-gray-500">
+            <div>&copy; 2024 Canvas Portfolio.</div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-black">Twitter</a>
+                <a href="#" class="hover:text-black">LinkedIn</a>
+                <a href="#" class="hover:text-black">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/rtl-toggle.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Simple marquee animation
+        const marquee = document.querySelector('.animate-marquee');
+        // We can add a simple keyframe via JS or rely on style.css. I added wipe-anim to style.css but not marquee.
+        // Let's add marquee to style.css next.
+    </script>
+</body>
+
+</html>

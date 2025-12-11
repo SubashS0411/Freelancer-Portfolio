@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas | Developer Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'off-white': '#fbfbfe',
+                        'deep-black': '#050505',
+                        'accent': '#4f46e5', // Default accent, overriden by text-neon-lime classes
+                        'matte-black': '#101010',
+                        'neon-lime': '#d9f99d',
+                    },
+                    fontFamily: {
+                        'syne': ['Syne', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-matte-black text-white transition-colors duration-300 antialiased overflow-x-hidden"
+    style="--accent-color: #d9f99d;">
+
+    <div
+        class="cursor-follower fixed w-0 h-0 bg-cover bg-center pointer-events-none z-[9999] opacity-0 transition-opacity duration-300 rounded-lg shadow-2xl">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-12 text-white">
+        <div
+            class="max-w-7xl mx-auto backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
+
+            <div class="relative group z-50">
+                <button
+                    class="flex items-center gap-1 font-syne font-bold text-xl md:text-2xl tracking-tighter hover:text-neon-lime transition-colors">
+                    Home <i class="ph ph-caret-down text-base"></i>
+                </button>
+                <div
+                    class="dropdown-menu absolute top-full left-0 mt-4 w-48 bg-matte-black/90 backdrop-blur-xl border border-white/10 rounded-xl p-2 shadow-2xl flex flex-col gap-1 z-50">
+                    <a href="index.html"
+                        class="px-4 py-2 hover:bg-white/10 rounded-lg font-inter text-sm font-medium flex justify-between items-center group/item text-white">
+                        Home V1 <i
+                            class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                    </a>
+                    <a href="index2.html"
+                        class="px-4 py-2 hover:bg-white/10 rounded-lg font-inter text-sm font-medium flex justify-between items-center group/item text-white">
+                        Home V2 <i
+                            class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 font-inter text-sm font-medium">
+                <a href="portfolio.html" class="hover:text-neon-lime transition-colors">Work</a>
+                <a href="index2.html" class="hover:text-neon-lime transition-colors">Services</a>
+                <a href="about.html" class="hover:text-neon-lime transition-colors">Notes</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="contact.html"
+                    class="px-6 py-2 bg-neon-lime text-matte-black rounded-full text-sm font-syne font-bold hover:bg-white transition-colors">Let's
+                    Talk</a>
+                <button
+                    class="rtl-toggle-btn text-sm font-bold border border-white/20 px-3 py-1 rounded-full hover:bg-white/10 transition-colors">RTL</button>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-matte-black text-white z-40 flex flex-col items-center justify-center gap-8 text-2xl font-syne font-bold">
+        <a href="portfolio.html">Work</a>
+        <a href="index2.html">Services</a>
+        <a href="about.html">Notes</a>
+        <a href="contact.html">Contact</a>
+        <button class="rtl-toggle-btn text-base px-6 py-2 border border-white rounded-full">Switch Direction</button>
+    </div>
+
+    <main class="pt-32 min-h-screen px-4 md:px-12 max-w-7xl mx-auto">
+
+        <!-- Hero Section -->
+        <section class="min-h-[80vh] grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+            <!-- Left: Text -->
+            <div class="order-2 md:order-1">
+                <h1 class="font-syne font-bold text-5xl md:text-7xl leading-[1.1] mb-6">
+                    Full-Stack <br>
+                    <span class="text-neon-lime">Magician.</span>
+                </h1>
+                <p class="font-inter text-gray-400 text-lg mb-8 max-w-md">
+                    I translate complex logic into pixel-perfect, high-performance web applications.
+                </p>
+                <div class="flex gap-12 font-inter text-sm text-gray-500 uppercase tracking-widest">
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>Three.js</span>
+                </div>
+            </div>
+
+            <!-- Right: 3D Animation -->
+            <div class="order-1 md:order-2 flex justify-center items-center h-full">
+                <div class="scene">
+                    <div class="cube">
+                        <div class="cube__face cube__face--front"></div>
+                        <div class="cube__face cube__face--back"></div>
+                        <div class="cube__face cube__face--right"></div>
+                        <div class="cube__face cube__face--left"></div>
+                        <div class="cube__face cube__face--top"></div>
+                        <div class="cube__face cube__face--bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology (New) -->
+        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-12 text-sm text-gray-400 font-inter">
+            <div class="space-y-6">
+                <h3 class="text-neon-lime text-xl font-syne font-bold">100% Client Satisfaction</h3>
+                <p>
+                    I don't just write code; I write success stories. Every line is optimized for performance,
+                    accessibility, and SEO.
+                    My process is transparent, agile, and focused on delivering value from day one.
+                </p>
+                <div class="w-full h-px bg-white/10"></div>
+            </div>
+            <div class="space-y-6">
+                <h3 class="text-neon-lime text-xl font-syne font-bold">Design Driven</h3>
+                <p>
+                    Understanding that design and development are two sides of the same coin. I bridge the gap with
+                    technical expertise and creative intuition.
+                </p>
+                <div class="w-full h-px bg-white/10"></div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="mb-32">
+            <h3 class="font-syne font-bold text-3xl mb-12 text-neon-lime">Stack & Services</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="p-8 border border-white/10 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <i class="ph ph-code text-4xl mb-6 text-neon-lime group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-xl mb-4 font-syne">Frontend Development</h4>
+                    <p class="text-gray-400 font-inter text-sm">React, Vue, Tailwind. Pixel perfect implementation of
+                        complex designs.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="p-8 border border-white/10 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <i
+                        class="ph ph-database text-4xl mb-6 text-neon-lime group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-xl mb-4 font-syne">Backend Logic</h4>
+                    <p class="text-gray-400 font-inter text-sm">Node.js, Python, SQL/NoSQL. Scalable and secure API
+                        architectures.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-8 border border-white/10 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <i
+                        class="ph ph-paint-brush text-4xl mb-6 text-neon-lime group-hover:scale-110 transition-transform"></i>
+                    <h4 class="font-bold text-xl mb-4 font-syne">Interactive Viz</h4>
+                    <p class="text-gray-400 font-inter text-sm">WebGL, Three.js, Canvas. Immersive web experiences that
+                        wow.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="mb-32 overflow-hidden">
+            <h3 class="font-syne font-bold text-3xl mb-12">Clients</h3>
+            <div class="flex gap-6 overflow-x-auto pb-8 snap-x">
+                <!-- Testimonial 1 -->
+                <div
+                    class="min-w-[300px] md:min-w-[400px] bg-white/5 p-8 rounded-2xl border border-white/10 snap-start">
+                    <p class="font-inter text-gray-300 italic mb-6">"Absolute wizardry. The project was delivered ahead
+                        of schedule and better than we imagined."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-gray-700"></div>
+                        <div>
+                            <div class="font-bold font-syne">Alex R.</div>
+                            <div class="text-xs text-gray-500">CEO, StartupX</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div
+                    class="min-w-[300px] md:min-w-[400px] bg-white/5 p-8 rounded-2xl border border-white/10 snap-start">
+                    <p class="font-inter text-gray-300 italic mb-6">"Cleanest code I've seen in years. Highly
+                        recommended for complex frontend work."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-gray-700"></div>
+                        <div>
+                            <div class="font-bold font-syne">Sarah M.</div>
+                            <div class="text-xs text-gray-500">CTO, TechFlow</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div
+                    class="min-w-[300px] md:min-w-[400px] bg-white/5 p-8 rounded-2xl border border-white/10 snap-start">
+                    <p class="font-inter text-gray-300 italic mb-6">"Creative and technical. A rare combination that
+                        solved our unique challenges."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-gray-700"></div>
+                        <div>
+                            <div class="font-bold font-syne">David K.</div>
+                            <div class="text-xs text-gray-500">Founder, DesignLab</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer V2 (Minimal) -->
+    <footer class="border-t border-white/10 py-12 bg-matte-black text-white px-4 md:px-12">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-syne font-bold text-2xl">CANVAS.</div>
+            <div class="flex gap-8 font-inter text-sm text-gray-400">
+                <a href="#" class="hover:text-neon-lime">GitHub</a>
+                <a href="#" class="hover:text-neon-lime">Twitter</a>
+                <a href="#" class="hover:text-neon-lime">Dribbble</a>
+            </div>
+            <div class="text-gray-600 text-sm">© 2024</div>
+        </div>
+    </footer>
+
+    <script src="js/rtl-toggle.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

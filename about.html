@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas | About</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'off-white': '#fbfbfe',
+                        'deep-black': '#050505',
+                        'accent': '#4f46e5',
+                        'matte-black': '#101010',
+                        'neon-lime': '#d9f99d',
+                    },
+                    fontFamily: {
+                        'syne': ['Syne', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden">
+
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-12">
+        <div
+            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border border-white/20 rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
+            <a href="index.html" class="text-2xl font-bold font-syne tracking-tighter">CANVAS.</a>
+            <div class="hidden md:flex items-center gap-8 font-inter text-sm font-medium">
+                <a href="portfolio.html" class="hover:text-accent transition-colors">Work</a>
+                <a href="index2.html" class="hover:text-accent transition-colors">Services</a>
+                <a href="about.html" class="text-accent font-bold transition-colors">Notes</a>
+            </div>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="contact.html"
+                    class="px-6 py-2 bg-deep-black text-white rounded-full text-sm font-syne font-bold hover:bg-accent transition-colors">Let's
+                    Talk</a>
+                <button
+                    class="rtl-toggle-btn text-sm font-bold border border-deep-black/10 px-3 py-1 rounded-full hover:bg-white/50 transition-colors">RTL</button>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl"><i class="ph ph-list"></i></button>
+        </div>
+    </nav>
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-8 text-2xl font-syne font-bold">
+        <a href="portfolio.html">Work</a>
+        <a href="index2.html">Services</a>
+        <a href="about.html">Notes</a>
+        <a href="contact.html">Contact</a>
+        <button class="rtl-toggle-btn text-base px-6 py-2 border border-black rounded-full">Switch Direction</button>
+    </div>
+
+    <main class="pt-40 min-h-screen px-4 md:px-12 max-w-7xl mx-auto pb-24">
+
+        <!-- Bio -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32 items-end">
+            <div>
+                <h1 class="font-syne font-bold text-5xl md:text-7xl mb-6 leading-tight">
+                    Not just a coder. <br>
+                    <span class="text-accent">A problem solver.</span>
+                </h1>
+            </div>
+            <div class="font-inter text-gray-500 text-lg leading-relaxed">
+                <p class="mb-6">
+                    I started my journey hacking Myspace layouts, moved to WordPress themes, and now I architect
+                    scalability-focused web applications.
+                    I bridge the gap between "looks good" and "works well."
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-deep-black underline font-bold">Download CV</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section class="mb-32">
+            <h2 class="font-syne font-bold text-3xl mb-12">Journey</h2>
+            <div class="relative border-l-2 border-black/10 ml-4 md:ml-12 space-y-12 pl-8 md:pl-12 py-4">
+
+                <!-- Item 1 -->
+                <div class="relative">
+                    <div
+                        class="absolute -left-[41px] md:-left-[57px] top-2 w-4 h-4 bg-deep-black rounded-full border-4 border-off-white">
+                    </div>
+                    <span class="text-sm font-inter text-gray-400 mb-2 block">2023 - Present</span>
+                    <h3 class="text-2xl font-syne font-bold">Senior Frontend Engineer</h3>
+                    <p class="text-accent font-inter mb-4">TechFlow Inc.</p>
+                    <p class="text-gray-500 max-w-xl">Leading a team of 5 developers. Migrated legacy monolith to
+                        Next.js micro-frontends.</p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative">
+                    <div
+                        class="absolute -left-[41px] md:-left-[57px] top-2 w-4 h-4 bg-gray-400 rounded-full border-4 border-off-white">
+                    </div>
+                    <span class="text-sm font-inter text-gray-400 mb-2 block">2021 - 2023</span>
+                    <h3 class="text-2xl font-syne font-bold">Freelance Developer</h3>
+                    <p class="text-accent font-inter mb-4">Self-Employed</p>
+                    <p class="text-gray-500 max-w-xl">Delivered 20+ projects for international clients. Specialized in
+                        WebGL interactions.</p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative">
+                    <div
+                        class="absolute -left-[41px] md:-left-[57px] top-2 w-4 h-4 bg-gray-400 rounded-full border-4 border-off-white">
+                    </div>
+                    <span class="text-sm font-inter text-gray-400 mb-2 block">2019 - 2021</span>
+                    <h3 class="text-2xl font-syne font-bold">Junior Designer</h3>
+                    <p class="text-accent font-inter mb-4">Creative Agency</p>
+                    <p class="text-gray-500 max-w-xl">Learned the fundamentals of UI/UX. Shifted focus to code to bring
+                        designs to life.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tech Stack Periodic Table -->
+        <section class="mb-32">
+            <h2 class="font-syne font-bold text-3xl mb-12">Arsenal</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <!-- Elements -->
+                <div
+                    class="aspect-square border border-black/10 flex flex-col justify-between p-4 hover:bg-deep-black hover:text-white transition-colors cursor-default">
+                    <span class="text-xs font-bold">01</span>
+                    <div class="font-syne font-bold text-2xl">Re</div>
+                    <span class="text-xs opacity-50">React</span>
+                </div>
+                <div
+                    class="aspect-square border border-black/10 flex flex-col justify-between p-4 hover:bg-deep-black hover:text-white transition-colors cursor-default">
+                    <span class="text-xs font-bold">02</span>
+                    <div class="font-syne font-bold text-2xl">Ts</div>
+                    <span class="text-xs opacity-50">TypeScript</span>
+                </div>
+                <div
+                    class="aspect-square border border-black/10 flex flex-col justify-between p-4 hover:bg-deep-black hover:text-white transition-colors cursor-default">
+                    <span class="text-xs font-bold">03</span>
+                    <div class="font-syne font-bold text-2xl">Tw</div>
+                    <span class="text-xs opacity-50">Tailwind</span>
+                </div>
+                <div
+                    class="aspect-square border border-black/10 flex flex-col justify-between p-4 hover:bg-deep-black hover:text-white transition-colors cursor-default">
+                    <span class="text-xs font-bold">04</span>
+                    <div class="font-syne font-bold text-2xl">No</div>
+                    <span class="text-xs opacity-50">Node</span>
+                </div>
+                <div
+                    class="aspect-square border border-black/10 flex flex-col justify-between p-4 hover:bg-deep-black hover:text-white transition-colors cursor-default">
+                    <span class="text-xs font-bold">05</span>
+                    <div class="font-syne font-bold text-2xl">Fi</div>
+                    <span class="text-xs opacity-50">Figma</span>
+                </div>
+                <div
+                    class="aspect-square border border-black/10 flex flex-col justify-between p-4 hover:bg-deep-black hover:text-white transition-colors cursor-default">
+                    <span class="text-xs font-bold">06</span>
+                    <div class="font-syne font-bold text-2xl">Gi</div>
+                    <span class="text-xs opacity-50">Git</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal -->
+        <section>
+            <h2 class="font-syne font-bold text-3xl mb-12">Offline</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800"
+                    alt="Photography"
+                    class="w-full h-64 object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="flex flex-col justify-center">
+                    <h3 class="font-syne font-bold text-2xl mb-4">Photography</h3>
+                    <p class="text-gray-500 font-inter">Capturing brutalist architecture in my free time. It informs my
+                        grid systems.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="js/rtl-toggle.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

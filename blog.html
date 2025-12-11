@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas | Thoughts</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'off-white': '#fbfbfe',
+                        'deep-black': '#050505',
+                        'accent': '#4f46e5',
+                        'matte-black': '#101010',
+                        'neon-lime': '#d9f99d',
+                    },
+                    fontFamily: {
+                        'syne': ['Syne', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden">
+
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-12">
+        <div
+            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border border-white/20 rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
+            <a href="index.html" class="text-2xl font-bold font-syne tracking-tighter">CANVAS.</a>
+            <div class="hidden md:flex items-center gap-8 font-inter text-sm font-medium">
+                <a href="portfolio.html" class="hover:text-accent transition-colors">Work</a>
+                <a href="index2.html" class="hover:text-accent transition-colors">Services</a>
+                <a href="blog.html" class="text-accent font-bold transition-colors">Notes</a>
+            </div>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="contact.html"
+                    class="px-6 py-2 bg-deep-black text-white rounded-full text-sm font-syne font-bold hover:bg-accent transition-colors">Let's
+                    Talk</a>
+                <button
+                    class="rtl-toggle-btn text-sm font-bold border border-deep-black/10 px-3 py-1 rounded-full hover:bg-white/50 transition-colors">RTL</button>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl"><i class="ph ph-list"></i></button>
+        </div>
+    </nav>
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-8 text-2xl font-syne font-bold">
+        <a href="portfolio.html">Work</a>
+        <a href="blog.html">Thoughts</a>
+        <a href="about.html">Notes</a>
+        <a href="contact.html">Contact</a>
+        <button class="rtl-toggle-btn text-base px-6 py-2 border border-black rounded-full">Switch Direction</button>
+    </div>
+
+    <main class="pt-32 min-h-screen px-4 md:px-12 max-w-7xl mx-auto pb-24">
+
+        <!-- Featured Article -->
+        <article class="bg-deep-black text-off-white rounded-3xl p-8 md:p-12 mb-24 relative overflow-hidden group">
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2">
+            </div>
+
+            <span
+                class="inline-block py-1 px-3 border border-white/20 rounded-full text-xs font-inter mb-6">Featured</span>
+            <h1
+                class="font-syne font-bold text-4xl md:text-6xl mb-6 max-w-3xl leading-tight group-hover:text-neon-lime transition-colors">
+                Why minimalist design is actually harder than maximalism.
+            </h1>
+            <div class="flex items-center gap-6 font-inter text-sm text-gray-400">
+                <span>Oct 12, 2024</span>
+                <span>•</span>
+                <span>5 min read</span>
+            </div>
+        </article>
+
+        <!-- Article List -->
+        <div class="max-w-3xl mx-auto space-y-16">
+
+            <article class="group cursor-pointer">
+                <div class="flex items-center gap-4 mb-4 font-inter text-xs text-gray-500 uppercase tracking-widest">
+                    <span>Tutorial</span>
+                    <span class="w-1 h-1 bg-black rounded-full"></span>
+                    <span>Sep 28, 2024</span>
+                </div>
+                <h2 class="font-syne font-bold text-3xl md:text-4xl mb-4 group-hover:text-accent transition-colors">
+                    Mastering CSS Grid: A visual guide.
+                </h2>
+                <p class="font-inter text-gray-500 leading-relaxed mb-6">
+                    Grid layout isn't just for dashboards. Here's how to use it for creative, broken-grid layouts that
+                    stand out.
+                </p>
+                <div class="h-px w-full bg-black/10 group-hover:bg-accent transition-colors"></div>
+            </article>
+
+            <article class="group cursor-pointer">
+                <div class="flex items-center gap-4 mb-4 font-inter text-xs text-gray-500 uppercase tracking-widest">
+                    <span>Opinion</span>
+                    <span class="w-1 h-1 bg-black rounded-full"></span>
+                    <span>Aug 15, 2024</span>
+                </div>
+                <h2 class="font-syne font-bold text-3xl md:text-4xl mb-4 group-hover:text-accent transition-colors">
+                    The end of flat design?
+                </h2>
+                <p class="font-inter text-gray-500 leading-relaxed mb-6">
+                    Neomorphism failed. Glassmorphism stuck around. What's the next evolution of digital interfaces
+                    looking like?
+                </p>
+                <div class="h-px w-full bg-black/10 group-hover:bg-accent transition-colors"></div>
+            </article>
+
+            <article class="group cursor-pointer">
+                <div class="flex items-center gap-4 mb-4 font-inter text-xs text-gray-500 uppercase tracking-widest">
+                    <span>Code</span>
+                    <span class="w-1 h-1 bg-black rounded-full"></span>
+                    <span>Jul 02, 2024</span>
+                </div>
+                <h2 class="font-syne font-bold text-3xl md:text-4xl mb-4 group-hover:text-accent transition-colors">
+                    React Server Components explained simply.
+                </h2>
+                <p class="font-inter text-gray-500 leading-relaxed mb-6">
+                    Cutting through the hype and looking at the practical benefits for your next freelance project.
+                </p>
+                <div class="h-px w-full bg-black/10 group-hover:bg-accent transition-colors"></div>
+            </article>
+
+        </div>
+
+    </main>
+    <script src="js/rtl-toggle.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

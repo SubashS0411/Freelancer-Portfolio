@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas | Pricing</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'off-white': '#fbfbfe',
+                        'deep-black': '#050505',
+                        'accent': '#4f46e5',
+                        'matte-black': '#101010',
+                        'neon-lime': '#d9f99d',
+                    },
+                    fontFamily: {
+                        'syne': ['Syne', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden">
+
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-12">
+        <div
+            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border border-white/20 rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
+            <!-- Logo / Home Dropdown -->
+            <div class="relative group z-50">
+                <button
+                    class="flex items-center gap-1 font-syne font-bold text-xl md:text-2xl tracking-tighter hover:text-accent transition-colors">
+                    Home <i class="ph ph-caret-down text-base"></i>
+                </button>
+                <div
+                    class="dropdown-menu absolute top-full left-0 mt-4 w-48 bg-white/90 backdrop-blur-xl border border-black/10 rounded-xl p-2 shadow-2xl flex flex-col gap-1 z-50">
+                    <a href="index.html"
+                        class="px-4 py-2 hover:bg-black/5 rounded-lg font-inter text-sm font-medium flex justify-between items-center group/item text-deep-black">
+                        Home V1 <i
+                            class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                    </a>
+                    <a href="index2.html"
+                        class="px-4 py-2 hover:bg-black/5 rounded-lg font-inter text-sm font-medium flex justify-between items-center group/item text-deep-black">
+                        Home V2 <i
+                            class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-8 font-inter text-sm font-medium">
+                <a href="portfolio.html" class="hover:text-accent transition-colors">Work</a>
+                <a href="pricing.html" class="text-accent font-bold transition-colors">Pricing</a>
+                <a href="about.html" class="hover:text-accent transition-colors">Notes</a>
+            </div>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#"
+                    class="px-4 py-2 border border-black/10 rounded-full text-sm font-inter font-medium hover:bg-black/5 transition-colors">Dashboard</a>
+                <a href="contact.html"
+                    class="px-6 py-2 bg-deep-black text-white rounded-full text-sm font-syne font-bold hover:bg-accent transition-colors">Let's
+                    Talk</a>
+                <button
+                    class="rtl-toggle-btn text-sm font-bold border border-deep-black/10 px-3 py-1 rounded-full hover:bg-white/50 transition-colors">RTL</button>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl"><i class="ph ph-list"></i></button>
+        </div>
+    </nav>
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-8 text-2xl font-syne font-bold">
+        <a href="portfolio.html">Work</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">Notes</a>
+        <a href="contact.html">Contact</a>
+        <button class="rtl-toggle-btn text-base px-6 py-2 border border-black rounded-full">Switch Direction</button>
+    </div>
+
+    <main class="pt-40 min-h-screen px-4 md:px-12 max-w-7xl mx-auto pb-24">
+
+        <div class="text-center mb-24">
+            <h1 class="font-syne font-bold text-5xl md:text-7xl mb-6">Transparency builds trust.</h1>
+            <p class="font-inter text-gray-500 max-w-xl mx-auto text-lg">
+                Clear pricing for clear expectations. No hidden fees, no surprises.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Hourly -->
+            <div
+                class="border-2 border-deep-black p-8 hover:bg-deep-black hover:text-white transition-colors duration-300 group">
+                <div class="font-syne font-bold text-2xl mb-2">The Fixer</div>
+                <div class="text-sm font-inter text-gray-500 group-hover:text-gray-300 mb-8">Consultation & Audits</div>
+                <div class="text-5xl font-syne font-bold mb-8">$150<span
+                        class="text-sm font-inter text-gray-400">/hr</span></div>
+                <ul class="space-y-4 font-inter text-sm mb-12">
+                    <li class="flex items-center gap-2"><i
+                            class="ph ph-check text-accent group-hover:text-neon-lime"></i> Code Review</li>
+                    <li class="flex items-center gap-2"><i
+                            class="ph ph-check text-accent group-hover:text-neon-lime"></i> UX Audit</li>
+                    <li class="flex items-center gap-2"><i
+                            class="ph ph-check text-accent group-hover:text-neon-lime"></i> Performance Optimization
+                    </li>
+                </ul>
+                <a href="contact.html"
+                    class="block w-full py-4 text-center border border-deep-black group-hover:border-white group-hover:bg-white group-hover:text-deep-black font-bold font-syne uppercase tracking-wider transition-colors">Book
+                    Now</a>
+            </div>
+
+            <!-- Project -->
+            <div class="border-2 border-deep-black bg-deep-black text-white p-8 transform md:-translate-y-4 shadow-xl">
+                <div class="font-syne font-bold text-2xl mb-2">The Builder</div>
+                <div class="text-sm font-inter text-gray-400 mb-8">End-to-End Website</div>
+                <div class="text-5xl font-syne font-bold mb-8">$5k+<span
+                        class="text-sm font-inter text-gray-400">/project</span></div>
+                <ul class="space-y-4 font-inter text-sm mb-12">
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> Design & Development
+                    </li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> CMS Integration</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> SEO Basics</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> 1 Month Support</li>
+                </ul>
+                <a href="contact.html"
+                    class="block w-full py-4 text-center bg-accent text-white font-bold font-syne uppercase tracking-wider hover:bg-white hover:text-accent transition-colors">Start
+                    Project</a>
+            </div>
+
+            <!-- Retainer -->
+            <div
+                class="border-2 border-deep-black p-8 hover:bg-deep-black hover:text-white transition-colors duration-300 group">
+                <div class="font-syne font-bold text-2xl mb-2">The Partner</div>
+                <div class="text-sm font-inter text-gray-500 group-hover:text-gray-300 mb-8">Monthly Maintenance</div>
+                <div class="text-5xl font-syne font-bold mb-8">$2k<span
+                        class="text-sm font-inter text-gray-400">/mo</span></div>
+                <ul class="space-y-4 font-inter text-sm mb-12">
+                    <li class="flex items-center gap-2"><i
+                            class="ph ph-check text-accent group-hover:text-neon-lime"></i> Priority Support</li>
+                    <li class="flex items-center gap-2"><i
+                            class="ph ph-check text-accent group-hover:text-neon-lime"></i> Regular Updates</li>
+                    <li class="flex items-center gap-2"><i
+                            class="ph ph-check text-accent group-hover:text-neon-lime"></i> Analytics Reports</li>
+                </ul>
+                <a href="contact.html"
+                    class="block w-full py-4 text-center border border-deep-black group-hover:border-white group-hover:bg-white group-hover:text-deep-black font-bold font-syne uppercase tracking-wider transition-colors">Subscribe</a>
+            </div>
+
+        </div>
+
+    </main>
+    <script src="js/rtl-toggle.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
