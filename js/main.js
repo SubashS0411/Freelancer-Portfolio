@@ -4,7 +4,40 @@ document.addEventListener('DOMContentLoaded', () => {
     initPortfolioFilter();
     initTypewriter();
     initContactForm();
+    initMobileDropdowns();
+    initScrollReveal();
 });
+
+function initScrollReveal() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+}
+
+
+function initMobileDropdowns() {
+    // If we implement a click toggle for mobile submenus
+    const mobileDropdownTriggers = document.querySelectorAll('.mobile-dropdown-trigger');
+    mobileDropdownTriggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = btn.nextElementSibling;
+            if (target) target.classList.toggle('hidden');
+            const icon = btn.querySelector('i');
+            if (icon) icon.classList.toggle('rotate-180');
+        });
+    });
+}
+
 
 function initContactForm() {
     const form = document.getElementById('contact-form');

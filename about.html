@@ -32,17 +32,39 @@
 </head>
 
 <body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden">
+    <div class="noise-overlay"></div>
 
     <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-12">
         <div
             class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border border-white/20 rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
-            <a href="index.html" class="text-2xl font-bold font-syne tracking-tighter">CANVAS.</a>
+            <!-- Logo / Home Dropdown -->
+            <div class="relative group z-50">
+                <button
+                    class="flex items-center gap-1 font-syne font-bold text-xl md:text-2xl tracking-tighter hover:text-accent transition-colors">
+                    Home <i class="ph ph-caret-down text-base"></i>
+                </button>
+                <div
+                    class="dropdown-menu absolute top-full left-0 mt-4 w-48 bg-white/90 backdrop-blur-xl border border-black/10 rounded-xl p-2 shadow-2xl flex flex-col gap-1 z-50">
+                    <a href="index.html"
+                        class="px-4 py-2 hover:bg-black/5 rounded-lg font-inter text-sm font-medium flex justify-between items-center group/item text-deep-black">
+                        Home V1 <i
+                            class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                    </a>
+                    <a href="index2.html"
+                        class="px-4 py-2 hover:bg-black/5 rounded-lg font-inter text-sm font-medium flex justify-between items-center group/item text-deep-black">
+                        Home V2 <i
+                            class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                    </a>
+                </div>
+            </div>
             <div class="hidden md:flex items-center gap-8 font-inter text-sm font-medium">
                 <a href="portfolio.html" class="hover:text-accent transition-colors">Work</a>
                 <a href="index2.html" class="hover:text-accent transition-colors">Services</a>
                 <a href="about.html" class="text-accent font-bold transition-colors">Notes</a>
             </div>
             <div class="hidden md:flex items-center gap-4">
+                <a href="#"
+                    class="px-4 py-2 border border-black/10 rounded-full text-sm font-inter font-medium hover:bg-black/5 transition-colors">Dashboard</a>
                 <a href="contact.html"
                     class="px-6 py-2 bg-deep-black text-white rounded-full text-sm font-syne font-bold hover:bg-accent transition-colors">Let's
                     Talk</a>
@@ -81,6 +103,15 @@
                     <a href="#" class="text-deep-black underline font-bold">Download CV</a>
                 </div>
             </div>
+        </section>
+
+        <!-- Philosophy Section (New) -->
+        <section class="max-w-4xl mb-32">
+            <blockquote
+                class="text-3xl md:text-5xl font-syne font-bold leading-tight relative pl-8 border-l-4 border-accent">
+                "Design is not just what it looks like and feels like. Design is how it works."
+                <footer class="mt-6 text-lg font-inter text-gray-400 font-normal not-italic">— Steve Jobs</footer>
+            </blockquote>
         </section>
 
         <!-- Experience Timeline -->
@@ -127,8 +158,35 @@
             </div>
         </section>
 
+        <!-- Education & Certifications (New) -->
+        <section class="mb-32 reveal-up">
+            <h2 class="font-syne font-bold text-3xl mb-12">Education</h2>
+            <div class="space-y-8">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-black/10 pb-8">
+                    <div>
+                        <h3 class="font-bold text-xl">Computer Science, BSc</h3>
+                        <p class="text-gray-500">University of Technology</p>
+                    </div>
+                    <div class="md:text-right mt-2 md:mt-0">
+                        <span class="block font-mono text-sm">2014 — 2018</span>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-black/10 pb-8">
+                    <div>
+                        <h3 class="font-bold text-xl">AWS Certified Solutions Architect</h3>
+                        <p class="text-gray-500">Amazon Web Services</p>
+                    </div>
+                    <div class="md:text-right mt-2 md:mt-0">
+                        <span class="block font-mono text-sm">2020</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Tech Stack Periodic Table -->
-        <section class="mb-32">
+        <section class="mb-32 reveal-up">
             <h2 class="font-syne font-bold text-3xl mb-12">Arsenal</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 <!-- Elements -->

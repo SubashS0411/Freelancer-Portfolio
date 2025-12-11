@@ -37,6 +37,7 @@
 </head>
 
 <body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden">
+    <div class="noise-overlay"></div>
 
     <!-- Cursor Follower Element -->
     <div
@@ -96,30 +97,62 @@
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu"
-        class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-8 text-2xl font-syne font-bold">
+        class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-6 text-xl font-syne font-bold transition-transform duration-300 translate-x-full">
+        <!-- Close Button (Optional, can rely on toggle) -->
+
+        <div class="flex flex-col items-center gap-2 w-full">
+            <button class="mobile-dropdown-trigger flex items-center gap-2">Home <i
+                    class="ph ph-caret-down transition-transform"></i></button>
+            <div class="hidden flex flex-col items-center gap-2 text-base text-gray-500 font-inter">
+                <a href="index.html">Home V1</a>
+                <a href="index2.html">Home V2</a>
+            </div>
+        </div>
+
         <a href="portfolio.html">Work</a>
+        <a href="#" class="text-accent">Dashboard</a>
         <a href="index2.html">Services</a>
         <a href="about.html">Notes</a>
         <a href="contact.html">Contact</a>
-        <button class="rtl-toggle-btn text-base px-6 py-2 border border-black rounded-full">Switch Direction</button>
+        <button class="rtl-toggle-btn text-base px-6 py-2 border border-black rounded-full mt-4">Switch
+            Direction</button>
     </div>
 
     <!-- Main Content -->
     <main class="pt-32 min-h-screen px-4 md:px-12 max-w-7xl mx-auto">
 
         <!-- Hero Section -->
-        <section class="min-h-[70vh] flex flex-col justify-center mb-24">
-            <h1 class="font-syne font-bold text-5xl md:text-8xl leading-[1.1] tracking-tight mb-8">
-                Building digital products<br>
-                <span class="text-accent" id="typewriter">that matter.</span>
+        <section class="h-[90vh] flex flex-col justify-center items-start mb-24 relative">
+            <h1
+                class="font-syne font-bold text-6xl md:text-9xl tracking-tighter leading-[0.9] mb-8 text-deep-black reveal-up">
+                CREATIVE <br>
+                <span class="text-gray-400 italic">DEVELOPER</span>
             </h1>
-            <p class="font-inter text-gray-500 max-w-xl text-lg">
-                I help brands and founders turn abstract ideas into functional, award-winning digital experiences.
-            </p>
+            <div class="flex flex-col md:flex-row gap-8 items-start md:items-center w-full reveal-up delay-200">
+                <p class="font-inter text-lg md:text-xl max-w-lg leading-relaxed text-gray-600">
+                    I build digital experiences that blend <span class="font-bold text-deep-black">brutalist
+                        aesthetics</span> with smooth interactions. Based in San Francisco, working globally.
+                </p>
+                <div class="h-px bg-black md:flex-1 w-full md:w-auto mt-2 md:mt-0 opacity-20"></div>
+                <div class="font-mono text-sm">SCROLL TO EXPLORE</div>
+            </div>
+        </section>
+
+        <!-- Client Roster (New) -->
+        <section class="mb-32 reveal-up">
+            <p class="font-mono text-xs text-gray-400 mb-6 uppercase tracking-widest">Trusted By</p>
+            <div
+                class="flex flex-wrap gap-x-12 gap-y-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="text-2xl font-bold font-syne">GOOGLE</div>
+                <div class="text-2xl font-bold font-syne">SPOTIFY</div>
+                <div class="text-2xl font-bold font-syne">NIKE</div>
+                <div class="text-2xl font-bold font-syne">AIRBNB</div>
+                <div class="text-2xl font-bold font-syne">STRIPE</div>
+            </div>
         </section>
 
         <!-- Process Section (New) -->
-        <section class="mb-32">
+        <section class="mb-32 reveal-up">
             <h2 class="font-syne font-bold text-3xl mb-12">How it works</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="space-y-4 group">
