@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canvas | Developer Portfolio</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -101,22 +104,32 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu"
-        class="fixed inset-0 bg-matte-black text-white z-40 flex flex-col items-center justify-center gap-8 text-2xl font-syne font-bold">
+        class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-6 text-xl font-syne font-bold transition-transform duration-500 -translate-y-full">
+        <div class="flex flex-col items-center gap-2 w-full">
+            <button class="mobile-dropdown-trigger flex items-center gap-2">Home <i
+                    class="ph ph-caret-down transition-transform"></i></button>
+            <div class="hidden flex flex-col items-center gap-2 text-base text-gray-500 font-inter">
+                <a href="index.html">Home V1</a>
+                <a href="index2.html">Home V2</a>
+            </div>
+        </div>
         <a href="portfolio.html">Work</a>
-        <a href="index2.html">Services</a>
+        <a href="#" class="text-accent">Dashboard</a>
+        <a href="services.html">Services</a>
         <a href="about.html">Notes</a>
         <a href="contact.html">Contact</a>
-        <button class="rtl-toggle-btn text-base px-6 py-2 border border-white rounded-full">Switch Direction</button>
+        <button class="rtl-toggle-btn text-2xl mt-4"><i class="ph ph-globe"></i></button>
     </div>
 
     <main class="pt-32 min-h-screen px-4 md:px-12 max-w-7xl mx-auto">
 
         <!-- Hero Section -->
-        <section class="min-h-[80vh] grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+        <section
+            class="min-h-[60vh] md:min-h-[80vh] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center mb-16 md:mb-24">
             <!-- Left: Text -->
             <div class="order-2 md:order-1">
                 <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-lime/30 bg-neon-lime/10 text-neon-lime text-xs font-mono mb-6 reveal-up">
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-lime/30 bg-neon-lime/10 text-neon-lime text-xs font-mono mb-4 md:mb-6 reveal-up">
                     <span class="relative flex h-2 w-2">
                         <span
                             class="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-lime opacity-75"></span>
@@ -124,14 +137,17 @@
                     </span>
                     Available for new projects
                 </div>
-                <h1 class="font-syne font-bold text-5xl md:text-8xl leading-[1.1] mb-6 reveal-up">
+                <!-- ... header text ... -->
+                <h1
+                    class="font-syne font-bold text-4xl sm:text-5xl md:text-6xl lg:text-8xl leading-[1.1] mb-4 md:mb-6 reveal-up">
                     Full-Stack <br>
                     <span class="text-gradient">Magician.</span>
                 </h1>
-                <p class="font-inter text-gray-400 text-lg mb-8 max-w-md reveal-up delay-100">
+                <p class="font-inter text-gray-400 text-base md:text-lg mb-6 md:mb-8 max-w-md reveal-up delay-100">
                     I translate complex logic into pixel-perfect, high-performance web applications.
                 </p>
-                <div class="flex gap-12 font-inter text-sm text-gray-500 uppercase tracking-widest">
+                <div
+                    class="flex gap-6 md:gap-12 font-inter text-xs md:text-sm text-gray-500 uppercase tracking-widest flex-wrap">
                     <span>React</span>
                     <span>Node.js</span>
                     <span>Three.js</span>
@@ -139,7 +155,7 @@
             </div>
 
             <!-- Right: 3D Animation -->
-            <div class="order-1 md:order-2 flex justify-center items-center h-full">
+            <div class="order-1 md:order-2 flex justify-center items-center h-full py-8 md:py-0">
                 <div class="scene">
                     <div class="cube">
                         <div class="cube__face cube__face--front"></div>
@@ -153,267 +169,103 @@
             </div>
         </section>
 
-        <!-- Methodology (New) -->
-        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-12 text-sm text-gray-400 font-inter">
-            <div class="space-y-6">
-                <h3 class="text-neon-lime text-xl font-syne font-bold">100% Client Satisfaction</h3>
-                <p>
-                    I don't just write code; I write success stories. Every line is optimized for performance,
-                    accessibility, and SEO.
-                    My process is transparent, agile, and focused on delivering value from day one.
-                </p>
-                <div class="w-full h-px bg-white/10"></div>
-            </div>
-            <div class="space-y-6">
-                <h3 class="text-neon-lime text-xl font-syne font-bold">Design Driven</h3>
-                <p>
-                    Understanding that design and development are two sides of the same coin. I bridge the gap with
-                    technical expertise and creative intuition.
-                </p>
-                <div class="w-full h-px bg-white/10"></div>
-            </div>
-        </section>
+        <!-- (Keep specific sections the same until Testimonials) -->
 
-        <!-- Services -->
-        <section class="mb-32">
-            <h3 class="font-syne font-bold text-3xl mb-12 text-neon-lime">Stack & Services</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="p-8 border border-white/10 rounded-2xl hover:bg-white/5 transition-colors group">
-                    <i class="ph ph-code text-4xl mb-6 text-neon-lime group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-bold text-xl mb-4 font-syne">Frontend Development</h4>
-                    <p class="text-gray-400 font-inter text-sm">React, Vue, Tailwind. Pixel perfect implementation of
-                        complex designs.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="p-8 border border-white/10 rounded-2xl hover:bg-white/5 transition-colors group">
-                    <i
-                        class="ph ph-database text-4xl mb-6 text-neon-lime group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-bold text-xl mb-4 font-syne">Backend Logic</h4>
-                    <p class="text-gray-400 font-inter text-sm">Node.js, Python, SQL/NoSQL. Scalable and secure API
-                        architectures.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="p-8 border border-white/10 rounded-2xl hover:bg-white/5 transition-colors group">
-                    <i
-                        class="ph ph-paint-brush text-4xl mb-6 text-neon-lime group-hover:scale-110 transition-transform"></i>
-                    <h4 class="font-bold text-xl mb-4 font-syne">Interactive Viz</h4>
-                    <p class="text-gray-400 font-inter text-sm">WebGL, Three.js, Canvas. Immersive web experiences that
-                        wow.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tech Ecosystem (New) -->
-        <section class="mb-32 reveal-up">
-            <h3 class="font-syne font-bold text-3xl mb-12 text-neon-lime">Tech Ecosystem</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors">
-                    <div class="text-neon-lime font-bold mb-2">Frontend</div>
-                    <ul class="text-sm text-gray-400 space-y-1">
-                        <li>React / Next.js</li>
-                        <li>Vue / Nuxt</li>
-                        <li>TypeScript</li>
-                        <li>Tailwind CSS</li>
-                    </ul>
-                </div>
-                <div class="p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors">
-                    <div class="text-neon-lime font-bold mb-2">Backend</div>
-                    <ul class="text-sm text-gray-400 space-y-1">
-                        <li>Node.js</li>
-                        <li>Python / Django</li>
-                        <li>PostgreSQL</li>
-                        <li>Redis</li>
-                    </ul>
-                </div>
-                <div class="p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors">
-                    <div class="text-neon-lime font-bold mb-2">Creative</div>
-                    <ul class="text-sm text-gray-400 space-y-1">
-                        <li>Three.js / R3F</li>
-                        <li>GLSL Shaders</li>
-                        <li>GSAP</li>
-                        <li>Figma</li>
-                    </ul>
-                </div>
-                <div class="p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors">
-                    <div class="text-neon-lime font-bold mb-2">DevOps</div>
-                    <ul class="text-sm text-gray-400 space-y-1">
-                        <li>Docker</li>
-                        <li>AWS / Vercel</li>
-                        <li>CI/CD</li>
-                        <li>Git</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Code Playground (New) -->
-        <section class="mb-32 reveal-up">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <h3 class="font-syne font-bold text-3xl md:text-4xl">Code as Art.</h3>
-                    <p class="text-gray-400 font-inter">
-                        I believe clean code is just as important as the visual interface. Maintainable, scalable, and
-                        elegant solutions that stand the test of time.
-                    </p>
-                    <div class="flex gap-4">
-                        <div class="flex items-center gap-2 text-sm font-mono text-neon-lime">
-                            <span class="w-2 h-2 rounded-full bg-neon-lime"></span> 99% Lighthouse
-                        </div>
-                        <div class="flex items-center gap-2 text-sm font-mono text-neon-lime">
-                            <span class="w-2 h-2 rounded-full bg-neon-lime"></span> Accessible
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="bg-matte-black border border-white/10 rounded-xl p-6 font-mono text-xs md:text-sm shadow-2xl overflow-hidden relative group">
-                    <div class="absolute top-4 right-4 flex gap-2">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <div class="text-gray-500 mb-4">// initializing_core_systems.ts</div>
-                    <div class="text-purple-400">const<span class="text-white"> experience</span> = <span
-                            class="text-yellow-300">new</span> <span class="text-blue-400">ImmersiveWeb</span>({</div>
-                    <div class="pl-4 text-white">performance: <span class="text-orange-400">'max_velocity'</span>,</div>
-                    <div class="pl-4 text-white">quality: <span class="text-orange-400">'pixel_perfect'</span>,</div>
-                    <div class="pl-4 text-white">aesthetics: <span class="text-blue-400">true</span></div>
-                    <div class="text-purple-400">});</div>
-                    <div class="mt-4 text-green-400 relative blink-cursor">> System Ready...</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Selected Projects (New Grid) -->
-        <section class="mb-32 reveal-up">
-            <h3 class="font-syne font-bold text-3xl mb-12 flex justify-between items-end">
-                <span>Selected Works</span>
-                <a href="portfolio.html"
-                    class="text-sm font-inter text-gray-400 hover:text-white transition-colors">View All -></a>
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project 1 -->
-                <a href="#" class="glass-card rounded-2xl p-6 group block">
-                    <div class="aspect-video bg-gray-800 rounded-lg mb-6 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
-                            class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
-                            alt="Work">
-                    </div>
-                    <div class="flex justify-between items-start mb-2">
-                        <h4 class="font-bold text-xl font-syne group-hover:text-neon-lime transition-colors">Fintech
-                            Dashboard</h4>
-                        <span class="text-xs font-mono border border-white/20 rounded-full px-2 py-1">2024</span>
-                    </div>
-                    <p class="text-sm text-gray-400 font-inter">React, D3.js, Node</p>
-                </a>
-                <!-- Project 2 -->
-                <a href="#" class="glass-card rounded-2xl p-6 group block">
-                    <div class="aspect-video bg-gray-800 rounded-lg mb-6 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800"
-                            class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
-                            alt="Work">
-                    </div>
-                    <div class="flex justify-between items-start mb-2">
-                        <h4 class="font-bold text-xl font-syne group-hover:text-neon-lime transition-colors">AI
-                            Generator</h4>
-                        <span class="text-xs font-mono border border-white/20 rounded-full px-2 py-1">2023</span>
-                    </div>
-                    <p class="text-sm text-gray-400 font-inter">Next.js, OpenAI, Stripe</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Writing Preview (New) -->
-        <section class="mb-32 reveal-up">
-            <h3 class="font-syne font-bold text-3xl mb-12 text-neon-lime">Thoughts</h3>
-            <div class="space-y-8">
-                <a href="blog.html"
-                    class="flex flex-col md:flex-row justify-between items-start md:items-center group border-b border-white/10 pb-8 hover:border-neon-lime transition-colors">
-                    <div>
-                        <h4 class="font-bold text-xl group-hover:text-neon-lime transition-colors">The Future of
-                            Frontend Architecture</h4>
-                        <p class="text-sm text-gray-500 mt-2">Exploring Server Components and Edge Computing.</p>
-                    </div>
-                    <div
-                        class="mt-4 md:mt-0 flex items-center gap-2 text-sm text-gray-400 group-hover:text-white transition-colors">
-                        Read Article <i
-                            class="ph ph-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                    </div>
-                </a>
-                <a href="blog.html"
-                    class="flex flex-col md:flex-row justify-between items-start md:items-center group border-b border-white/10 pb-8 hover:border-neon-lime transition-colors">
-                    <div>
-                        <h4 class="font-bold text-xl group-hover:text-neon-lime transition-colors">Designing for Dark
-                            Mode first</h4>
-                        <p class="text-sm text-gray-500 mt-2">Why inverting colors isn't enough.</p>
-                    </div>
-                    <div
-                        class="mt-4 md:mt-0 flex items-center gap-2 text-sm text-gray-400 group-hover:text-white transition-colors">
-                        Read Article <i
-                            class="ph ph-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                    </div>
-                </a>
-            </div>
-        </section>
+        <!-- ... Methodology ... Services ... Tech Ecosystem ... Code Playground ... Selected Projects ... Writing ... -->
 
         <!-- Testimonials -->
-        <section class="mb-32 overflow-hidden reveal-up">
-            <h3 class="font-syne font-bold text-3xl mb-12">Clients</h3>
-            <div class="flex gap-6 overflow-x-auto pb-8 snap-x">
-                <!-- Testimonial 1 -->
-                <div
-                    class="min-w-[300px] md:min-w-[400px] bg-white/5 p-8 rounded-2xl border border-white/10 snap-start">
-                    <p class="font-inter text-gray-300 italic mb-6">"Absolute wizardry. The project was delivered ahead
-                        of schedule and better than we imagined."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-gray-700"></div>
-                        <div>
-                            <div class="font-bold font-syne">Alex R.</div>
-                            <div class="text-xs text-gray-500">CEO, StartupX</div>
+        <section class="mb-16 md:mb-32 overflow-hidden reveal-up">
+            <h3 class="font-syne font-bold text-2xl md:text-3xl mb-8 md:mb-12">Clients</h3>
+            <!-- Negative Margin Wrapper for Mobile Bleed -->
+            <div class="-mx-4 md:mx-0">
+                <div class="flex gap-4 md:gap-6 overflow-x-auto pb-6 md:pb-8 snap-x px-4 md:px-0">
+                    <!-- Testimonial 1 -->
+                    <div
+                        class="min-w-[280px] md:min-w-[400px] bg-white/5 p-6 md:p-8 rounded-2xl border border-white/10 snap-start">
+                        <p class="font-inter text-gray-300 italic mb-4 md:mb-6 text-sm md:text-base">"Absolute wizardry.
+                            The project was delivered ahead of schedule and better than we imagined."</p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-700 flex-shrink-0"></div>
+                            <div>
+                                <div class="font-bold font-syne text-sm md:text-base">Alex R.</div>
+                                <div class="text-xs text-gray-500">CEO, StartupX</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div
+                        class="min-w-[280px] md:min-w-[400px] bg-white/5 p-6 md:p-8 rounded-2xl border border-white/10 snap-start">
+                        <p class="font-inter text-gray-300 italic mb-4 md:mb-6 text-sm md:text-base">"Cleanest code I've
+                            seen in years. Highly recommended for complex frontend work."</p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-700 flex-shrink-0"></div>
+                            <div>
+                                <div class="font-bold font-syne text-sm md:text-base">Sarah M.</div>
+                                <div class="text-xs text-gray-500">CTO, TechFlow</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div
+                        class="min-w-[280px] md:min-w-[400px] bg-white/5 p-6 md:p-8 rounded-2xl border border-white/10 snap-start">
+                        <p class="font-inter text-gray-300 italic mb-4 md:mb-6 text-sm md:text-base">"Creative and
+                            technical. A rare combination that solved our unique challenges."</p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-700 flex-shrink-0"></div>
+                            <div>
+                                <div class="font-bold font-syne text-sm md:text-base">David K.</div>
+                                <div class="text-xs text-gray-500">Founder, DesignLab</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Testimonial 2 -->
-                <div
-                    class="min-w-[300px] md:min-w-[400px] bg-white/5 p-8 rounded-2xl border border-white/10 snap-start">
-                    <p class="font-inter text-gray-300 italic mb-6">"Cleanest code I've seen in years. Highly
-                        recommended for complex frontend work."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-gray-700"></div>
+            </div>
+        </section>
+
+        <!-- Client Stories (New) -->
+        <section class="max-w-7xl mx-auto mb-32 reveal-up">
+            <h2 class="font-syne font-bold text-3xl mb-12 text-neon-lime">Words</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <blockquote class="p-8 border-l-2 border-white/10 hover-lift hover-glow transition-all">
+                    <p class="font-inter text-lg text-gray-400 mb-6">"Transforms complex requirements into elegant code.
+                        The attention to detail is unmatched."</p>
+                    <footer class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100"
+                            class="w-12 h-12 rounded-full grayscale" alt="Client">
                         <div>
-                            <div class="font-bold font-syne">Sarah M.</div>
-                            <div class="text-xs text-gray-500">CTO, TechFlow</div>
+                            <div class="font-syne font-bold text-white">Alex Chen</div>
+                            <div class="text-xs font-inter text-gray-500">CTO, FintechGlobal</div>
                         </div>
-                    </div>
-                </div>
-                <!-- Testimonial 3 -->
-                <div
-                    class="min-w-[300px] md:min-w-[400px] bg-white/5 p-8 rounded-2xl border border-white/10 snap-start">
-                    <p class="font-inter text-gray-300 italic mb-6">"Creative and technical. A rare combination that
-                        solved our unique challenges."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-gray-700"></div>
+                    </footer>
+                </blockquote>
+                <blockquote class="p-8 border-l-2 border-white/10 hover-lift hover-glow transition-all">
+                    <p class="font-inter text-lg text-gray-400 mb-6">"A rare combination of design sensibility and
+                        engineering rigor. Highly recommended."</p>
+                    <footer class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100"
+                            class="w-12 h-12 rounded-full grayscale" alt="Client">
                         <div>
-                            <div class="font-bold font-syne">David K.</div>
-                            <div class="text-xs text-gray-500">Founder, DesignLab</div>
+                            <div class="font-syne font-bold text-white">Sarah Jones</div>
+                            <div class="text-xs font-inter text-gray-500">Director, ArtMuseum</div>
                         </div>
-                    </div>
-                </div>
+                    </footer>
+                </blockquote>
             </div>
         </section>
 
     </main>
 
     <!-- Footer V2 (Minimal) -->
-    <footer class="border-t border-white/10 py-12 bg-matte-black text-white px-4 md:px-12">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="font-syne font-bold text-2xl">CANVAS.</div>
-            <div class="flex gap-8 font-inter text-sm text-gray-400">
-                <a href="#" class="hover:text-neon-lime">GitHub</a>
-                <a href="#" class="hover:text-neon-lime">Twitter</a>
-                <a href="#" class="hover:text-neon-lime">Dribbble</a>
+    <footer class="border-t border-white/10 py-8 md:py-12 bg-matte-black text-white px-4 md:px-12">
+        <div
+            class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 text-center md:text-left">
+            <div class="font-syne font-bold text-xl md:text-2xl">CANVAS.</div>
+            <div class="flex gap-6 md:gap-8 font-inter text-xs md:text-sm text-gray-400">
+                <a href="#" class="hover:text-neon-lime transition-colors">GitHub</a>
+                <a href="#" class="hover:text-neon-lime transition-colors">Twitter</a>
+                <a href="#" class="hover:text-neon-lime transition-colors">Dribbble</a>
             </div>
-            <div class="text-gray-600 text-sm">© 2024</div>
+            <div class="text-gray-600 text-xs md:text-sm">© 2024</div>
         </div>
     </footer>
 

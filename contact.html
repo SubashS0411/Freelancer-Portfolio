@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canvas | Contact</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -74,13 +77,20 @@
             <button id="mobile-menu-btn" class="md:hidden text-2xl"><i class="ph ph-list"></i></button>
         </div>
     </nav>
-    <div id="mobile-menu"
-        class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-8 text-2xl font-syne font-bold">
+    <div id="mobile-menu" class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-6 text-xl font-syne font-bold transition-transform duration-500 -translate-y-full">
+        <div class="flex flex-col items-center gap-2 w-full">
+             <button class="mobile-dropdown-trigger flex items-center gap-2">Home <i class="ph ph-caret-down transition-transform"></i></button>
+             <div class="hidden flex flex-col items-center gap-2 text-base text-gray-500 font-inter">
+                 <a href="index.html">Home V1</a>
+                 <a href="index2.html">Home V2</a>
+             </div>
+        </div>
         <a href="portfolio.html">Work</a>
-        <a href="index2.html">Services</a>
+        <a href="#" class="text-accent">Dashboard</a>
+        <a href="services.html">Services</a>
         <a href="about.html">Notes</a>
         <a href="contact.html">Contact</a>
-        <button class="rtl-toggle-btn text-base px-6 py-2 border border-black rounded-full">Switch Direction</button>
+        <button class="rtl-toggle-btn text-2xl mt-4"><i class="ph ph-globe"></i></button>
     </div>
 
     <main class="pt-32 min-h-screen px-4 md:px-12 max-w-7xl mx-auto pb-12 flex flex-col items-center justify-center">
@@ -221,8 +231,45 @@
         </div>
     </div>
 
+        <!-- Footer CTA -->
+    <footer class="px-4 md:px-12 max-w-7xl mx-auto pb-24">
+        <a href="contact.html" class="group block">
+            <h2 class="text-[12vw] leading-none font-syne font-bold hover:text-accent transition-colors">
+                Have an idea? <br>
+                <span class="group-hover:ml-12 transition-all duration-500">Tell me everything.</span>
+            </h2>
+        </a>
+        <div class="flex justify-between items-end mt-12 border-t border-black/10 pt-8 font-inter text-sm text-gray-500">
+            <div>&copy; 2024 Canvas Portfolio.</div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-black">Twitter</a>
+                <a href="#" class="hover:text-black">LinkedIn</a>
+                <a href="#" class="hover:text-black">Instagram</a>
+            </div>
+        </div>
+    </footer>
     <script src="js/rtl-toggle.js"></script>
+        <!-- Footer CTA -->
+    <footer class="px-4 md:px-12 max-w-7xl mx-auto pb-24">
+        <a href="contact.html" class="group block">
+            <h2 class="text-[12vw] leading-none font-syne font-bold hover:text-accent transition-colors">
+                Have an idea? <br>
+                <span class="group-hover:ml-12 transition-all duration-500">Tell me everything.</span>
+            </h2>
+        </a>
+        <div class="flex justify-between items-end mt-12 border-t border-black/10 pt-8 font-inter text-sm text-gray-500">
+            <div>&copy; 2024 Canvas Portfolio.</div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-black">Twitter</a>
+                <a href="#" class="hover:text-black">LinkedIn</a>
+                <a href="#" class="hover:text-black">Instagram</a>
+            </div>
+        </div>
+    </footer>
     <script src="js/main.js"></script>
 </body>
 
 </html>
+
+
+
