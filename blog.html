@@ -20,8 +20,8 @@
                         'neon-lime': '#d9f99d',
                     },
                     fontFamily: {
-                        'syne': ['Syne', 'sans-serif'],
-                        'inter': ['Inter', 'sans-serif'],
+                        'syne': ['Outfit', 'sans-serif'],
+                        'inter': ['Space Grotesk', 'sans-serif'],
                     }
                 }
             }
@@ -31,11 +31,12 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
-<body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden"><div class="noise-overlay"></div>
+<body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden">
+    <div class="noise-overlay"></div>
 
-    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-12">
+    <nav class="fixed top-0 md:top-6 left-0 right-0 z-50 px-0 md:px-12">
         <div
-            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border border-white/20 rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
+            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border-b border-white/20 md:border md:border-white/20 rounded-none md:rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
             <!-- Logo / Home Dropdown -->
             <div class="relative group z-50">
                 <button
@@ -105,53 +106,135 @@
         <div class="max-w-3xl mx-auto space-y-16">
 
             <article class="group cursor-pointer">
-                <div class="flex items-center gap-4 mb-4 font-inter text-xs text-gray-500 uppercase tracking-widest">
-                    <span>Tutorial</span>
-                    <span class="w-1 h-1 bg-black rounded-full"></span>
-                    <span>Sep 28, 2024</span>
-                </div>
-                <h2 class="font-syne font-bold text-3xl md:text-4xl mb-4 group-hover:text-accent transition-colors">
-                    Mastering CSS Grid: A visual guide.
-                </h2>
-                <p class="font-inter text-gray-500 leading-relaxed mb-6">
-                    Grid layout isn't just for dashboards. Here's how to use it for creative, broken-grid layouts that
-                    stand out.
-                </p>
-                <div class="h-px w-full bg-black/10 group-hover:bg-accent transition-colors"></div>
-            </article>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
-            <article class="group cursor-pointer">
-                <div class="flex items-center gap-4 mb-4 font-inter text-xs text-gray-500 uppercase tracking-widest">
-                    <span>Opinion</span>
-                    <span class="w-1 h-1 bg-black rounded-full"></span>
-                    <span>Aug 15, 2024</span>
-                </div>
-                <h2 class="font-syne font-bold text-3xl md:text-4xl mb-4 group-hover:text-accent transition-colors">
-                    The end of flat design?
-                </h2>
-                <p class="font-inter text-gray-500 leading-relaxed mb-6">
-                    Neomorphism failed. Glassmorphism stuck around. What's the next evolution of digital interfaces
-                    looking like?
-                </p>
-                <div class="h-px w-full bg-black/10 group-hover:bg-accent transition-colors"></div>
-            </article>
+                    <!-- Articles Column -->
+                    <div class="lg:col-span-8 space-y-16">
 
-            <article class="group cursor-pointer">
-                <div class="flex items-center gap-4 mb-4 font-inter text-xs text-gray-500 uppercase tracking-widest">
-                    <span>Code</span>
-                    <span class="w-1 h-1 bg-black rounded-full"></span>
-                    <span>Jul 02, 2024</span>
-                </div>
-                <h2 class="font-syne font-bold text-3xl md:text-4xl mb-4 group-hover:text-accent transition-colors">
-                    React Server Components explained simply.
-                </h2>
-                <p class="font-inter text-gray-500 leading-relaxed mb-6">
-                    Cutting through the hype and looking at the practical benefits for your next freelance project.
-                </p>
-                <div class="h-px w-full bg-black/10 group-hover:bg-accent transition-colors"></div>
-            </article>
+                        <!-- Article 1 -->
+                        <article class="group cursor-pointer reveal-up">
+                            <div class="mb-6 overflow-hidden rounded-2xl">
+                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200"
+                                    alt="Article Cover"
+                                    class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                            </div>
+                            <div class="flex items-center gap-4 text-sm font-inter text-gray-500 mb-4">
+                                <span class="text-accent font-bold">Tech</span>
+                                <span>•</span>
+                                <span>Oct 12, 2023</span>
+                                <span>•</span>
+                                <span>5 min read</span>
+                            </div>
+                            <h2
+                                class="font-syne font-bold text-3xl md:text-4xl mb-4 group-hover:text-accent transition-colors">
+                                The Future of Frontend Architecture</h2>
+                            <p class="font-inter text-gray-600 leading-relaxed mb-6">
+                                Exploring the shift towards server components, edge computing, and how it impacts the
+                                way we build modern web applications.
+                            </p>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 font-bold font-syne text-deep-black hover:gap-4 transition-all">
+                                Read Story <i class="ph ph-arrow-right"></i>
+                            </a>
+                        </article>
 
-        </div>
+                        <!-- Article 2 -->
+                        <article class="group cursor-pointer reveal-up">
+                            <div class="mb-6 overflow-hidden rounded-2xl">
+                                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200"
+                                    alt="Article Cover"
+                                    class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                            </div>
+                            <div class="flex items-center gap-4 text-sm font-inter text-gray-500 mb-4">
+                                <span class="text-accent font-bold">Design</span>
+                                <span>•</span>
+                                <span>Sep 28, 2023</span>
+                                <span>•</span>
+                                <span>4 min read</span>
+                            </div>
+                            <h2
+                                class="font-syne font-bold text-3xl md:text-4xl mb-4 group-hover:text-accent transition-colors">
+                                Designing for Dark Mode First</h2>
+                            <p class="font-inter text-gray-600 leading-relaxed mb-6">
+                                Why starting with dark mode can lead to better color systems and accessibility choices
+                                in your product design.
+                            </p>
+                            <a href="#"
+                                class="inline-flex items-center gap-2 font-bold font-syne text-deep-black hover:gap-4 transition-all">
+                                Read Story <i class="ph ph-arrow-right"></i>
+                            </a>
+                        </article>
+
+                        <!-- Pagination -->
+                        <div class="flex items-center gap-4 pt-12 border-t border-black/10">
+                            <button
+                                class="px-4 py-2 rounded-full border border-black/10 hover:bg-black hover:text-white transition-colors disabled:opacity-50"
+                                disabled>Previous</button>
+                            <button
+                                class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center font-bold">1</button>
+                            <button
+                                class="w-10 h-10 rounded-full hover:bg-black/5 flex items-center justify-center font-bold transition-colors">2</button>
+                            <button
+                                class="w-10 h-10 rounded-full hover:bg-black/5 flex items-center justify-center font-bold transition-colors">3</button>
+                            <button
+                                class="px-4 py-2 rounded-full border border-black/10 hover:bg-black hover:text-white transition-colors">Next</button>
+                        </div>
+
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="lg:col-span-4 space-y-12">
+                        <!-- Author Widget -->
+                        <div class="p-8 bg-white border border-black/5 rounded-2xl reveal-up delay-100">
+                            <div class="w-16 h-16 bg-gray-200 rounded-full mb-4 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200"
+                                    class="w-full h-full object-cover" alt="Author">
+                            </div>
+                            <h3 class="font-bold font-syne text-xl mb-2">Alex Maker</h3>
+                            <p class="text-sm text-gray-500 font-inter mb-6">Creative developer sharing thoughts on
+                                code, design, and the internet.</p>
+                            <div class="flex gap-4 text-xl">
+                                <a href="#" class="hover:text-accent transition-colors"><i
+                                        class="ph ph-twitter-logo"></i></a>
+                                <a href="#" class="hover:text-accent transition-colors"><i
+                                        class="ph ph-instagram-logo"></i></a>
+                                <a href="#" class="hover:text-accent transition-colors"><i
+                                        class="ph ph-github-logo"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Newsletter Widget -->
+                        <div class="p-8 bg-deep-black text-white rounded-2xl reveal-up delay-200">
+                            <h3 class="font-bold font-syne text-xl mb-2">Subscribe</h3>
+                            <p class="text-sm text-gray-400 font-inter mb-6">Get the latest articles delivered to your
+                                inbox. No spam.</p>
+                            <form class="space-y-4">
+                                <input type="email" placeholder="email@address.com"
+                                    class="w-full px-4 py-3 bg-white/10 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent border border-white/10 placeholder-gray-500">
+                                <button type="button"
+                                    class="w-full py-3 bg-white text-black font-bold font-syne rounded-lg hover:bg-accent hover:text-white transition-colors">Join
+                                    List</button>
+                            </form>
+                        </div>
+
+                        <!-- Categories -->
+                        <div class="reveal-up delay-300">
+                            <h3 class="font-bold font-syne text-sm uppercase tracking-widest mb-6 text-gray-400">
+                                Categories</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="#"
+                                    class="px-4 py-2 border border-black/10 rounded-full text-sm font-inter hover:bg-black hover:text-white transition-colors">Development</a>
+                                <a href="#"
+                                    class="px-4 py-2 border border-black/10 rounded-full text-sm font-inter hover:bg-black hover:text-white transition-colors">Design</a>
+                                <a href="#"
+                                    class="px-4 py-2 border border-black/10 rounded-full text-sm font-inter hover:bg-black hover:text-white transition-colors">Career</a>
+                                <a href="#"
+                                    class="px-4 py-2 border border-black/10 rounded-full text-sm font-inter hover:bg-black hover:text-white transition-colors">Freelancing</a>
+                            </div>
+                        </div>
+                    </aside>
+
+                </div>
 
     </main>
     <script src="js/rtl-toggle.js"></script>

@@ -147,11 +147,25 @@ function initMobileMenu() {
         menuBtn.addEventListener('click', () => {
             const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
             menuBtn.setAttribute('aria-expanded', !isExpanded);
-            mobileMenu.classList.toggle('open');
-            // Toggle hidden class is no longer needed if we want it strictly visible for animation?
-            // Actually, we usually want display:none when closed to avoid focus overlap. 
-            // But for slide animation, it needs to be display:flex/block but offscreen.
-            // Let's remove the 'hidden' class from the HTML start.
+
+            // Toggle Translate Classes (Support top-down)
+            if (mobileMenu.classList.contains('-translate-y-full')) {
+                mobileMenu.classList.remove('-translate-y-full');
+                mobileMenu.classList.add('translate-y-0');
+            } else {
+                mobileMenu.classList.add('-translate-y-full');
+                mobileMenu.classList.remove('translate-y-0');
+            }
+        });
+
+        // Close on Link Click
+        const links = mobileMenu.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-y-full');
+                mobileMenu.classList.remove('translate-y-0');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
         });
     }
 }

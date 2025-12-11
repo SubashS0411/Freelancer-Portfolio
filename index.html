@@ -21,8 +21,8 @@
                         'neon-lime': '#d9f99d',
                     },
                     fontFamily: {
-                        'syne': ['Syne', 'sans-serif'],
-                        'inter': ['Inter', 'sans-serif'],
+                        'syne': ['Outfit', 'sans-serif'],
+                        'inter': ['Space Grotesk', 'sans-serif'],
                     }
                 }
             }
@@ -45,9 +45,9 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-12">
+    <nav class="fixed top-0 md:top-6 left-0 right-0 z-50 px-0 md:px-12">
         <div
-            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border border-white/20 rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
+            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border-b border-white/20 md:border md:border-white/20 rounded-none md:rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
 
             <!-- Logo / Home Dropdown -->
             <div class="relative group z-50">
@@ -72,20 +72,20 @@
 
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center gap-8 font-inter text-sm font-medium">
-                <a href="portfolio.html" class="hover:text-accent transition-colors">Work</a>
-                <a href="index2.html" class="hover:text-accent transition-colors">Services</a>
-                <a href="about.html" class="hover:text-accent transition-colors">Notes</a>
+                <a href="portfolio.html" class="hover-line hover:text-accent transition-colors">Work</a>
+                <a href="services.html" class="hover-line hover:text-accent transition-colors">Services</a>
+                <a href="about.html" class="hover-line hover:text-accent transition-colors">Notes</a>
             </div>
 
             <!-- Right Actions -->
             <div class="hidden md:flex items-center gap-4">
                 <a href="#"
-                    class="px-4 py-2 border border-black/10 rounded-full text-sm font-inter font-medium hover:bg-black/5 transition-colors">Dashboard</a>
+                    class="px-4 py-2 border border-black/10 rounded-full text-sm font-inter font-medium hover:bg-black/5 hover-lift transition-all">Dashboard</a>
                 <a href="contact.html"
-                    class="px-6 py-2 bg-deep-black text-white rounded-full text-sm font-syne font-bold hover:bg-accent transition-colors">Let's
+                    class="px-6 py-2 bg-deep-black text-white rounded-full text-sm font-syne font-bold hover:bg-accent hover-lift transition-all">Let's
                     Talk</a>
-                <button
-                    class="rtl-toggle-btn text-sm font-bold border border-deep-black/10 px-3 py-1 rounded-full hover:bg-white/50 transition-colors">RTL</button>
+                <button class="rtl-toggle-btn text-xl hover:text-accent transition-colors hover-lift"><i
+                        class="ph ph-globe"></i></button>
             </div>
 
             <!-- Mobile Toggle -->
@@ -97,7 +97,7 @@
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu"
-        class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-6 text-xl font-syne font-bold transition-transform duration-300 translate-x-full">
+        class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-6 text-xl font-syne font-bold transition-transform duration-500 -translate-y-full">
         <!-- Close Button (Optional, can rely on toggle) -->
 
         <div class="flex flex-col items-center gap-2 w-full">
@@ -111,11 +111,10 @@
 
         <a href="portfolio.html">Work</a>
         <a href="#" class="text-accent">Dashboard</a>
-        <a href="index2.html">Services</a>
+        <a href="services.html">Services</a>
         <a href="about.html">Notes</a>
         <a href="contact.html">Contact</a>
-        <button class="rtl-toggle-btn text-base px-6 py-2 border border-black rounded-full mt-4">Switch
-            Direction</button>
+        <button class="rtl-toggle-btn text-2xl mt-4"><i class="ph ph-globe"></i></button>
     </div>
 
     <!-- Main Content -->
@@ -148,6 +147,43 @@
                 <div class="text-2xl font-bold font-syne">NIKE</div>
                 <div class="text-2xl font-bold font-syne">AIRBNB</div>
                 <div class="text-2xl font-bold font-syne">STRIPE</div>
+            </div>
+        </section>
+
+        <!-- Services Overview (New) -->
+        <section class="mb-32 reveal-up">
+            <h2 class="font-syne font-bold text-3xl mb-12">Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div
+                    class="space-y-4 p-6 bg-white border border-black/5 rounded-2xl hover:border-black/20 transition-colors">
+                    <div
+                        class="w-12 h-12 bg-deep-black text-white rounded-full flex items-center justify-center text-2xl mx-auto md:mx-0">
+                        <i class="ph ph-desktop"></i>
+                    </div>
+                    <h3 class="font-bold text-xl font-syne">Development</h3>
+                    <p class="text-sm text-gray-500 font-inter">React, Vue, Node.js. Building scalable applications with
+                        clean code.</p>
+                </div>
+                <div
+                    class="space-y-4 p-6 bg-white border border-black/5 rounded-2xl hover:border-black/20 transition-colors">
+                    <div
+                        class="w-12 h-12 bg-deep-black text-white rounded-full flex items-center justify-center text-2xl mx-auto md:mx-0">
+                        <i class="ph ph-paint-brush"></i>
+                    </div>
+                    <h3 class="font-bold text-xl font-syne">Design</h3>
+                    <p class="text-sm text-gray-500 font-inter">UI/UX, prototyping, and brand identity that stands out.
+                    </p>
+                </div>
+                <div
+                    class="space-y-4 p-6 bg-white border border-black/5 rounded-2xl hover:border-black/20 transition-colors">
+                    <div
+                        class="w-12 h-12 bg-deep-black text-white rounded-full flex items-center justify-center text-2xl mx-auto md:mx-0">
+                        <i class="ph ph-rocket"></i>
+                    </div>
+                    <h3 class="font-bold text-xl font-syne">Growth</h3>
+                    <p class="text-sm text-gray-500 font-inter">SEO, analytics, and performance optimization to convert
+                        users.</p>
+                </div>
             </div>
         </section>
 

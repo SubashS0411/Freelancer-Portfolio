@@ -1,5 +1,106 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* Dynamic Gradient Text */
+.text-gradient {
+    background: linear-gradient(to right, #d9f99d, #4ade80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.text-gradient-purple {
+    background: linear-gradient(to right, #c084fc, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Ambient Glow */
+.glow-blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(80px);
+}
+
+/* Glassmorphism Card Hover */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+/* Background Animations */
+@keyframes float-blob {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.glow-blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(80px);
+    mix-blend-mode: screen;
+    /* Enhanced Lighting */
+    animation: float-blob 10s infinite ease-in-out;
+}
+
+.glow-blob.delay-1 {
+    animation-delay: -5s;
+}
+
+.glow-blob.neon-lime {
+    background: radial-gradient(circle, rgba(217, 249, 157, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.glow-blob.purple {
+    background: radial-gradient(circle, rgba(192, 132, 252, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+}
 
 /* Custom Animations */
 @keyframes wipe-anim {
@@ -258,6 +359,13 @@ h6 {
     }
 }
 
+/* Textured High Contrast Selection */
+::selection {
+    background: #d9f99d;
+    /* Neon Lime */
+    color: #101010;
+}
+
 /* Mobile Menu Transition */
 #mobile-menu {
     transform: translateX(100%);
@@ -296,4 +404,103 @@ h6 {
 .mobile-dropdown.open {
     display: flex;
     flex-direction: column;
+}
+
+/* =========================================
+   Global Hover Effects & Micro-Interactions
+   ========================================= */
+
+/* 1. Animated Underline (Left to Right) */
+.hover-line {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    /* Required for proper line width */
+}
+
+.hover-line::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    /* Thin, elegant line */
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    /* Matches text color (accent or white) */
+    transform-origin: bottom right;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hover-line:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* 2. Magnetic Lift (Buttons & Cards) */
+.hover-lift {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+    /* Subtle lift */
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    /* Soft shadow */
+}
+
+/* 3. Inner Glow (Dark Mode Cards) */
+.hover-glow {
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: skewX(-20deg);
+    transition: none;
+    /* Reset animation */
+}
+
+.hover-glow:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.2);
+    /* Accent glow */
+}
+
+.hover-glow:hover::before {
+    animation: shine-effect 0.8s;
+}
+
+@keyframes shine-effect {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* 4. Image Zoom Container */
+.hover-zoom-img {
+    overflow: hidden;
+    /* Ensure image doesn't overflow container */
+}
+
+.hover-zoom-img img {
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-zoom-img:hover img {
+    transform: scale(1.05);
+    /* Smooth zoom */
 }

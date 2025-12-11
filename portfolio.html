@@ -21,8 +21,8 @@
                         'neon-lime': '#d9f99d',
                     },
                     fontFamily: {
-                        'syne': ['Syne', 'sans-serif'],
-                        'inter': ['Inter', 'sans-serif'],
+                        'syne': ['Outfit', 'sans-serif'],
+                        'inter': ['Space Grotesk', 'sans-serif'],
                     }
                 }
             }
@@ -32,7 +32,8 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
-<body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden"><div class="noise-overlay"></div>
+<body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden">
+    <div class="noise-overlay"></div>
 
     <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-12">
         <div
@@ -99,11 +100,49 @@
             </div>
         </header>
 
+        <!-- Featured Case Study (New) -->
+        <section class="mb-32 reveal-up">
+            <div class="relative w-full h-[60vh] bg-deep-black rounded-3xl overflow-hidden group">
+                <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:scale-105 transition-transform duration-700"
+                    style="background-image: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2700&auto=format&fit=crop');">
+                </div>
+                <div class="absolute bottom-0 left-0 p-8 md:p-12 text-white">
+                    <div class="text-xs font-mono mb-4 uppercase tracking-widest text-accent">Latest Ship</div>
+                    <h2 class="text-4xl md:text-6xl font-syne font-bold mb-4">Fintech Dashboard 2.0</h2>
+                    <p class="max-w-xl text-gray-300 mb-8">A complete overhaul of a legacy financial platform, improving
+                        load times by 400% and user retention by 25%.</p>
+                    <a href="#"
+                        class="inline-block px-8 py-3 bg-white text-deep-black rounded-full font-bold hover:bg-accent hover:text-white transition-colors">View
+                        Case Study</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Grid (New) -->
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32 border-y border-black/10 py-12 reveal-up">
+            <div>
+                <div class="text-4xl md:text-6xl font-bold font-syne mb-2">30+</div>
+                <div class="text-sm text-gray-500 font-mono uppercase">Projects</div>
+            </div>
+            <div>
+                <div class="text-4xl md:text-6xl font-bold font-syne mb-2">5</div>
+                <div class="text-sm text-gray-500 font-mono uppercase">Years Exp</div>
+            </div>
+            <div>
+                <div class="text-4xl md:text-6xl font-bold font-syne mb-2">12</div>
+                <div class="text-sm text-gray-500 font-mono uppercase">Awards</div>
+            </div>
+            <div>
+                <div class="text-4xl md:text-6xl font-bold font-syne mb-2">100%</div>
+                <div class="text-sm text-gray-500 font-mono uppercase">Satisfaction</div>
+            </div>
+        </section>
+
         <!-- Masonry Grid -->
         <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 pb-32">
 
             <!-- Item 1 (Tall) -->
-            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden" data-category="web">
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden hover-lift" data-category="web">
                 <img src="https://images.unsplash.com/photo-1481487484168-9b930d5b7d9d?auto=format&fit=crop&q=80&w=800"
                     alt="Project"
                     class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
@@ -120,7 +159,7 @@
             </div>
 
             <!-- Item 2 (Short) -->
-            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden"
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden hover-lift"
                 data-category="branding">
                 <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800"
                     alt="Project"
@@ -138,7 +177,7 @@
             </div>
 
             <!-- Item 3 (Tall) -->
-            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden"
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden hover-lift"
                 data-category="mobile">
                 <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800"
                     alt="Project"
@@ -156,7 +195,7 @@
             </div>
 
             <!-- Item 4 (Medium) -->
-            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden" data-category="web">
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden hover-lift" data-category="web">
                 <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=800"
                     alt="Project"
                     class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
@@ -173,7 +212,7 @@
             </div>
 
             <!-- Item 5 (Medium) -->
-            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden"
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden hover-lift"
                 data-category="branding">
                 <img src="https://images.unsplash.com/photo-1600508774634-4e11d2557173?auto=format&fit=crop&q=80&w=800"
                     alt="Project"
@@ -190,7 +229,77 @@
                 </div>
             </div>
 
-        </div>
+            <!-- Item 6 (Tall) -->
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden hover-lift mb-8"
+                data-category="mobile">
+                <img src="https://images.unsplash.com/photo-1551650975-87bd1c547e36?auto=format&fit=crop&q=80&w=800"
+                    alt="Project"
+                    class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div
+                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button
+                        class="bg-white text-black px-6 py-3 rounded-full font-bold font-syne hover:scale-110 transition-transform">View
+                        Case Study</button>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-syne font-bold text-xl">Banking App</h3>
+                    <p class="text-sm text-gray-500 font-inter">Mobile App</p>
+                </div>
+            </div>
+
+            <!-- Item 7 (Short) -->
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden hover-lift mb-8"
+                data-category="web">
+                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80&w=800"
+                    alt="Project"
+                    class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div
+                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button
+                        class="bg-white text-black px-6 py-3 rounded-full font-bold font-syne hover:scale-110 transition-transform">View
+                        Case Study</button>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-syne font-bold text-xl">SaaS Platform</h3>
+                    <p class="text-sm text-gray-500 font-inter">Web Development</p>
+                </div>
+            </div>
+
+            <!-- Item 8 (Medium) -->
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden hover-lift mb-8"
+                data-category="branding">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b7993143a2d?auto=format&fit=crop&q=80&w=800"
+                    alt="Project"
+                    class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div
+                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button
+                        class="bg-white text-black px-6 py-3 rounded-full font-bold font-syne hover:scale-110 transition-transform">View
+                        Case Study</button>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-syne font-bold text-xl">Neon Vibe</h3>
+                    <p class="text-sm text-gray-500 font-inter">Branding</p>
+                </div>
+            </div>
+
+            <!-- Item 9 (Tall) -->
+            <div class="project-card break-inside-avoid relative group rounded-2xl overflow-hidden hover-lift mb-8"
+                data-category="web">
+                <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80&w=800"
+                    alt="Project"
+                    class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div
+                    class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button
+                        class="bg-white text-black px-6 py-3 rounded-full font-bold font-syne hover:scale-110 transition-transform">View
+                        Case Study</button>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-syne font-bold text-xl">Dev Tools CLI</h3>
+                    <p class="text-sm text-gray-500 font-inter">Web Development</p>
+                </div>
+            </div>
 
     </main>
     <script src="js/rtl-toggle.js"></script>

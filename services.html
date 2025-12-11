@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Canvas</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'off-white': '#fbfbfe',
+                        'deep-black': '#050505',
+                        'accent': '#4f46e5',
+                        'matte-black': '#101010',
+                        'neon-lime': '#d9f99d',
+                    },
+                    fontFamily: {
+                        'syne': ['Outfit', 'sans-serif'],
+                        'inter': ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden">
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 md:top-6 left-0 right-0 z-50 px-0 md:px-12">
+        <div
+            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border-b border-white/20 md:border md:border-white/20 rounded-none md:rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
+
+            <!-- Logo -->
+            <div class="relative group z-50">
+                <a href="index.html"
+                    class="flex items-center gap-1 font-syne font-bold text-xl md:text-2xl tracking-tighter hover:text-accent transition-colors">
+                    Canvas
+                </a>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 font-inter text-sm font-medium">
+                <a href="portfolio.html" class="hover:text-accent transition-colors">Work</a>
+                <a href="services.html" class="text-accent font-bold transition-colors">Services</a>
+                <a href="about.html" class="hover:text-accent transition-colors">Notes</a>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#"
+                    class="px-4 py-2 border border-black/10 rounded-full text-sm font-inter font-medium hover:bg-black/5 transition-colors">Dashboard</a>
+                <a href="contact.html"
+                    class="px-6 py-2 bg-deep-black text-white rounded-full text-sm font-syne font-bold hover:bg-accent transition-colors">Let's
+                    Talk</a>
+                <button class="rtl-toggle-btn text-xl hover:text-accent transition-colors"><i
+                        class="ph ph-globe"></i></button>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-6 text-xl font-syne font-bold transition-transform duration-500 -translate-y-full">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Work</a>
+        <a href="#" class="text-accent">Dashboard</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">Notes</a>
+        <a href="contact.html">Contact</a>
+        <button class="rtl-toggle-btn text-2xl mt-4"><i class="ph ph-globe"></i></button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-40 max-w-7xl mx-auto px-4 md:px-12 min-h-screen">
+
+        <!-- Hero -->
+        <section class="mb-32">
+            <h1 class="font-syne font-bold text-6xl md:text-9xl mb-8 reveal-up">
+                Capabilities<span class="text-accent">.</span>
+            </h1>
+            <p class="font-inter text-xl md:text-2xl text-gray-500 max-w-2xl leading-relaxed reveal-up delay-100">
+                Bridging the gap between <b>design</b> and <b>engineering</b>. I help brands build digital products that
+                look good and work even better.
+            </p>
+        </section>
+
+        <!-- Service Grid -->
+        <section class="mb-32 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Card 1 -->
+            <div
+                class="p-12 bg-white border border-black/5 rounded-3xl hover:border-black/20 transition-all duration-300 group reveal-up hover-lift">
+                <div
+                    class="w-16 h-16 bg-deep-black text-white rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform">
+                    <i class="ph ph-paint-brush"></i>
+                </div>
+                <h3 class="font-syne font-bold text-3xl mb-6">Product Design</h3>
+                <p class="font-inter text-gray-500 mb-8 leading-relaxed">
+                    User-centric design that drives engagement. From wireframes to high-fidelity prototypes.
+                </p>
+                <ul class="space-y-3 font-inter text-sm font-medium text-gray-700">
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> UI/UX Design</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> Design Systems</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> Prototyping</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> Mobile & Web Apps</li>
+                </ul>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="p-12 bg-white border border-black/5 rounded-3xl hover:border-black/20 transition-all duration-300 group reveal-up delay-100 hover-lift">
+                <div
+                    class="w-16 h-16 bg-deep-black text-white rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform">
+                    <i class="ph ph-code"></i>
+                </div>
+                <h3 class="font-syne font-bold text-3xl mb-6">Development</h3>
+                <p class="font-inter text-gray-500 mb-8 leading-relaxed">
+                    Clean, scalable code. I build websites that are fast, accessible, and easy to maintain.
+                </p>
+                <ul class="space-y-3 font-inter text-sm font-medium text-gray-700">
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> Front-End (React, Vue)
+                    </li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> Headless CMS</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> Creative Coding (WebGL)
+                    </li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> Performance Optimization
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="p-12 bg-white border border-black/5 rounded-3xl hover:border-black/20 transition-all duration-300 group reveal-up delay-200 hover-lift">
+                <div
+                    class="w-16 h-16 bg-deep-black text-white rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform">
+                    <i class="ph ph-strategy"></i>
+                </div>
+                <h3 class="font-syne font-bold text-3xl mb-6">Strategy</h3>
+                <p class="font-inter text-gray-500 mb-8 leading-relaxed">
+                    Defining the roadmap for your digital success. I help you clarify your goals and how to reach them.
+                </p>
+                <ul class="space-y-3 font-inter text-sm font-medium text-gray-700">
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> Digital Transformation
+                    </li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> Technical Consulting
+                    </li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> Brand Positioning</li>
+                    <li class="flex items-center gap-2"><i class="ph ph-check text-accent"></i> SEO & Analytics</li>
+                </ul>
+            </div>
+
+            <!-- Card 4 (CTA) -->
+            <div
+                class="p-12 bg-deep-black text-white rounded-3xl flex flex-col justify-center items-start reveal-up delay-300">
+                <h3 class="font-syne font-bold text-3xl mb-6">Need something else?</h3>
+                <p class="font-inter text-gray-400 mb-8 leading-relaxed">
+                    I'm always open to discussing unique projects and challenges. Let's chat about your specific needs.
+                </p>
+                <a href="contact.html"
+                    class="px-8 py-4 bg-white text-black rounded-full font-bold font-syne hover:bg-accent hover:text-white transition-colors">
+                    Start a Conversation
+                </a>
+            </div>
+
+        </section>
+
+        <!-- Process Steps -->
+        <section class="mb-32">
+            <div class="border-t border-black/10 pt-12">
+                <h2 class="font-syne font-bold text-4xl mb-12">The Process</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <span class="block text-6xl font-syne font-bold text-gray-200 mb-4">01</span>
+                        <h4 class="text-xl font-bold font-syne mb-2">Discovery</h4>
+                        <p class="text-sm text-gray-500 font-inter">Research & Planning</p>
+                    </div>
+                    <div>
+                        <span class="block text-6xl font-syne font-bold text-gray-200 mb-4">02</span>
+                        <h4 class="text-xl font-bold font-syne mb-2">Design</h4>
+                        <p class="text-sm text-gray-500 font-inter">Concept & Polish</p>
+                    </div>
+                    <div>
+                        <span class="block text-6xl font-syne font-bold text-gray-200 mb-4">03</span>
+                        <h4 class="text-xl font-bold font-syne mb-2">Code</h4>
+                        <p class="text-sm text-gray-500 font-inter">Build & Test</p>
+                    </div>
+                    <div>
+                        <span class="block text-6xl font-syne font-bold text-gray-200 mb-4">04</span>
+                        <h4 class="text-xl font-bold font-syne mb-2">Launch</h4>
+                        <p class="text-sm text-gray-500 font-inter">Deploy & Support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/rtl-toggle.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

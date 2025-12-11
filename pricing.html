@@ -20,8 +20,8 @@
                         'neon-lime': '#d9f99d',
                     },
                     fontFamily: {
-                        'syne': ['Syne', 'sans-serif'],
-                        'inter': ['Inter', 'sans-serif'],
+                        'syne': ['Outfit', 'sans-serif'],
+                        'inter': ['Space Grotesk', 'sans-serif'],
                     }
                 }
             }
@@ -31,11 +31,12 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
-<body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden"><div class="noise-overlay"></div>
+<body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden">
+    <div class="noise-overlay"></div>
 
-    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-12">
+    <nav class="fixed top-0 md:top-6 left-0 right-0 z-50 px-0 md:px-12">
         <div
-            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border border-white/20 rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
+            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border-b border-white/20 md:border md:border-white/20 rounded-none md:rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
             <!-- Logo / Home Dropdown -->
             <div class="relative group z-50">
                 <button
@@ -152,6 +153,58 @@
             </div>
 
         </div>
+
+        <!-- Comparison Table (New) -->
+        <section class="max-w-5xl mx-auto mb-32 overflow-x-auto reveal-up">
+            <h3 class="font-syne font-bold text-3xl mb-12 text-center">Feature Breakdown</h3>
+            <table class="w-full text-left border-collapse min-w-[600px]">
+                <thead>
+                    <tr class="border-b border-black/10">
+                        <th class="py-4 pl-4 font-syne font-bold text-lg">Feature</th>
+                        <th class="py-4 font-syne font-bold text-center">Hourly</th>
+                        <th class="py-4 font-syne font-bold text-center">Project</th>
+                        <th class="py-4 font-syne font-bold text-center text-accent">Retainer</th>
+                    </tr>
+                </thead>
+                <tbody class="font-inter text-sm text-gray-600">
+                    <tr class="border-b border-black/5 hover:bg-black/5 transition-colors">
+                        <td class="py-4 pl-4 font-medium text-black">Code Quality</td>
+                        <td class="py-4 text-center">Standard</td>
+                        <td class="py-4 text-center">Premium</td>
+                        <td class="py-4 text-center">Elite</td>
+                    </tr>
+                    <tr class="border-b border-black/5 hover:bg-black/5 transition-colors">
+                        <td class="py-4 pl-4 font-medium text-black">Revisions</td>
+                        <td class="py-4 text-center">-</td>
+                        <td class="py-4 text-center">2 Rounds</td>
+                        <td class="py-4 text-center">Unlimited</td>
+                    </tr>
+                    <tr class="border-b border-black/5 hover:bg-black/5 transition-colors">
+                        <td class="py-4 pl-4 font-medium text-black">SEO Optimization</td>
+                        <td class="py-4 text-center"><i class="ph ph-x"></i></td>
+                        <td class="py-4 text-center"><i class="ph ph-check text-green-500"></i></td>
+                        <td class="py-4 text-center"><i class="ph ph-check text-green-500"></i></td>
+                    </tr>
+                    <tr class="border-b border-black/5 hover:bg-black/5 transition-colors">
+                        <td class="py-4 pl-4 font-medium text-black">Priority Support</td>
+                        <td class="py-4 text-center"><i class="ph ph-x"></i></td>
+                        <td class="py-4 text-center">Standard</td>
+                        <td class="py-4 text-center font-bold text-accent">24/7 VIP</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Money Back Guarantee -->
+        <section class="max-w-2xl mx-auto text-center mb-32 reveal-up">
+            <div class="inline-block p-12 bg-black text-white rounded-3xl relative overflow-hidden group">
+                <div class="absolute inset-0 bg-accent/20 blur-3xl group-hover:bg-accent/30 transition-colors"></div>
+                <i class="ph ph-shield-check text-6xl mb-6 text-accent relative z-10"></i>
+                <h3 class="font-syne font-bold text-2xl mb-4 relative z-10">100% Satisfaction Guarantee</h3>
+                <p class="font-inter text-gray-400 relative z-10">If you're not thrilled with the initial design
+                    concepts, I'll refund your deposit. No hard feelings.</p>
+            </div>
+        </section>
 
     </main>
     <script src="js/rtl-toggle.js"></script>

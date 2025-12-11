@@ -20,8 +20,8 @@
                         'neon-lime': '#d9f99d',
                     },
                     fontFamily: {
-                        'syne': ['Syne', 'sans-serif'],
-                        'inter': ['Inter', 'sans-serif'],
+                        'syne': ['Outfit', 'sans-serif'],
+                        'inter': ['Space Grotesk', 'sans-serif'],
                     }
                 }
             }
@@ -30,15 +30,29 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-black text-white flex flex-col items-center justify-center min-h-screen overflow-hidden"><div class="noise-overlay"></div>
+<body class="bg-black text-white flex flex-col items-center justify-center min-h-screen overflow-hidden">
+    <div class="noise-overlay"></div>
+
+    <nav class="fixed top-0 md:top-6 left-0 right-0 z-50 px-0 md:px-12">
+        <div
+            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border-b border-white/20 md:border md:border-white/20 rounded-none md:rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
+            <!-- Navigation content would go here, e.g., logo, links -->
+        </div>
+    </nav>
 
     <h1 class="glitch font-syne font-bold text-8xl md:text-9xl mb-4 text-center" data-text="404">404</h1>
     <p class="font-inter text-gray-400 text-xl md:text-2xl mb-12">Creativity Not Found.</p>
 
     <a href="index.html"
-        class="px-8 py-3 border border-white rounded-full font-bold font-syne hover:bg-white hover:text-black transition-colors">
-        Return Home
-    </a>
+        class="px-8 py-3 bg-white text-black rounded-full font-bold font-syne hover:bg-accent hover:text-white transition-colors">Return
+        to Reality</a>
+
+    <div class="mt-12 flex gap-4 text-sm font-mono text-gray-500">
+        <span>Destinations:</span>
+        <a href="portfolio.html" class="hover:text-white transition-colors text-white">Work</a> /
+        <a href="about.html" class="hover:text-white transition-colors text-white">About</a> /
+        <a href="contact.html" class="hover:text-white transition-colors text-white">Contact</a>
+    </div>
 
 </body>
 

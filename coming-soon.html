@@ -20,8 +20,8 @@
                         'neon-lime': '#d9f99d',
                     },
                     fontFamily: {
-                        'syne': ['Syne', 'sans-serif'],
-                        'inter': ['Inter', 'sans-serif'],
+                        'syne': ['Outfit', 'sans-serif'],
+                        'inter': ['Space Grotesk', 'sans-serif'],
                     }
                 }
             }
@@ -31,13 +31,18 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
-<body class="bg-off-white text-deep-black flex flex-col items-center justify-center min-h-screen p-4"><div class="noise-overlay"></div>
+<body class="bg-off-white text-deep-black flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="noise-overlay"></div>
 
-    <div class="max-w-2xl text-center">
+    <nav class="fixed top-0 md:top-6 left-0 right-0 z-50 px-0 md:px-12">
         <div
-            class="mb-12 inline-flex items-center justify-center w-20 h-20 rounded-full bg-deep-black text-white text-3xl">
+            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border-b border-white/20 md:border md:border-white/20 rounded-none md:rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
             <i class="ph ph-calendar-x"></i>
         </div>
+    </nav>
+
+    <div class="max-w-2xl text-center">
+
 
         <h1 class="font-syne font-bold text-5xl md:text-7xl mb-8 leading-tight">
             currently booked until <br>
@@ -45,25 +50,65 @@
         </h1>
 
         <p class="font-inter text-gray-500 mb-12 text-lg">
-            I accept a limited number of projects to ensure quality.
-            Join the waitlist to be notified when a spot opens up.
+        <p class="font-inter text-gray-500 text-lg mb-12 max-w-md mx-auto">
+            I'm currently focused on a large-scale fintech project. Accepting new inquiries starting Q2 2025.
         </p>
 
-        <form class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
-            <input type="email" placeholder="Your email address"
-                class="flex-1 px-6 py-3 border border-deep-black rounded-lg font-syne bg-transparent focus:outline-none focus:bg-white">
-            <button type="button"
-                class="px-8 py-3 bg-deep-black text-white rounded-lg font-bold font-syne hover:bg-accent transition-colors">Notify
-                Me</button>
-        </form>
+        <!-- Countdown Timer (New) -->
+        <div class="grid grid-cols-4 gap-4 max-w-md mx-auto mb-12 font-mono text-center">
+            <div class="p-4 bg-white rounded-xl border border-black/5">
+                <div class="text-3xl font-bold font-syne" id="days">00</div>
+                <div class="text-xs text-gray-400 uppercase">Days</div>
+            </div>
+            <div class="p-4 bg-white rounded-xl border border-black/5">
+                <div class="text-3xl font-bold font-syne" id="hours">00</div>
+                <div class="text-xs text-gray-400 uppercase">Hrs</div>
+            </div>
+            <div class="p-4 bg-white rounded-xl border border-black/5">
+                <div class="text-3xl font-bold font-syne" id="minutes">00</div>
+                <div class="text-xs text-gray-400 uppercase">Mins</div>
+            </div>
+            <div class="p-4 bg-white rounded-xl border border-black/5">
+                <div class="text-3xl font-bold font-syne" id="seconds">00</div>
+                <div class="text-xs text-gray-400 uppercase">Secs</div>
+            </div>
+        </div>
 
-        <div class="mt-16">
-            <a href="index.html"
-                class="font-bold font-syne border-b border-black text-sm uppercase tracking-widest hover:text-accent hover:border-accent transition-colors">Back
-                to Portfolio</a>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <a href="index2.html"
+                class="px-8 py-3 bg-deep-black text-white rounded-full font-bold font-syne hover:bg-accent transition-colors">
+                Join Waiting List
+            </a>
+            <a href="portfolio.html"
+                class="px-8 py-3 border border-deep-black/10 rounded-full font-bold font-syne hover:bg-black/5 transition-colors">
+                View Past Work
+            </a>
         </div>
     </div>
 
+    <script>
+        // Simple Countdown Logic
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 45); // Set to 45 days from now
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = d < 10 ? '0' + d : d;
+            document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
+            document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
+            document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
 </body>
 
 </html>
