@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const html = document.documentElement;
     const wipeOverlay = document.createElement('div');
-    
+
     wipeOverlay.className = 'wipe-overlay';
     body.appendChild(wipeOverlay);
 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function triggerWipe(targetDir) {
         body.classList.add('wiping-active');
-        
+
         setTimeout(() => {
             if (targetDir === 'rtl') {
                 setRTL(true);
@@ -45,17 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // For now, relying on dir="rtl" + flexbox behavior.
         // Also handling mobile menu slide direction if needed (CSS classes).
         if (save) localStorage.setItem('direction', 'rtl');
-        updateToggleText('LTR');
+        if (save) localStorage.setItem('direction', 'rtl');
     }
 
     function setLTR(save) {
         html.setAttribute('dir', 'ltr');
         html.classList.remove('rtl');
         if (save) localStorage.setItem('direction', 'ltr');
-        updateToggleText('RTL');
+        if (save) localStorage.setItem('direction', 'ltr');
     }
 
-    function updateToggleText(text) {
-        toggleBtns.forEach(btn => btn.innerText = text);
-    }
+
 });

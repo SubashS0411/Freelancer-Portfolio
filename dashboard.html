@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas | Client Dashboard</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'off-white': '#fbfbfe',
+                        'deep-black': '#050505',
+                        'accent': '#4f46e5',
+                        'matte-black': '#101010',
+                        'neon-lime': '#d9f99d',
+                    },
+                    fontFamily: {
+                        'syne': ['Outfit', 'sans-serif'],
+                        'inter': ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* Sidebar Active State */
+        .sidebar-link.active {
+            background: linear-gradient(90deg, rgba(217, 249, 157, 0.1) 0%, transparent 100%);
+            border-left: 2px solid #d9f99d;
+            color: #d9f99d;
+        }
+
+        /* Glass Panel */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-matte-black text-white transition-colors duration-300 antialiased overflow-hidden"
+    style="--accent-color: #d9f99d;">
+
+    <!-- Ambient Glows -->
+    <div class="glow-blob top-0 left-0 -translate-x-1/3 -translate-y-1/3 opacity-30 mix-blend-screen"></div>
+    <div
+        class="glow-blob bottom-0 right-0 translate-x-1/3 translate-y-1/3 opacity-20 bg-neon-lime delay-1 mix-blend-screen">
+    </div>
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- Sidebar -->
+        <!-- Sidebar -->
+        <aside id="sidebar"
+            class="fixed inset-y-0 z-50 w-64 glass-panel border-r border-white/5 flex flex-col transition-transform duration-300 bg-matte-black md:bg-transparent md:relative md:translate-x-0 -translate-x-full">
+            <div class="p-8 border-b border-white/5">
+                <a href="index.html" class="font-syne font-bold text-2xl tracking-tighter">CANVAS<span
+                        class="text-neon-lime">.</span></a>
+            </div>
+
+            <nav class="flex-1 p-4 space-y-2 overflow-y-auto">
+                <div class="text-xs font-inter text-gray-500 uppercase tracking-widest px-4 mb-2 mt-4">Main</div>
+                <a href="#"
+                    class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-inter text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                    <i class="ph ph-squares-four text-lg"></i> Overview
+                </a>
+                <a href="#"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-inter text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                    <i class="ph ph-kanban text-lg"></i> Projects
+                </a>
+                <a href="#"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-inter text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                    <i class="ph ph-file-text text-lg"></i> Invoices
+                </a>
+                <a href="#"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-inter text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                    <i class="ph ph-chat-circle-dots text-lg"></i> Messages <span
+                        class="ml-auto bg-neon-lime text-black text-xs font-bold px-1.5 py-0.5 rounded-full">3</span>
+                </a>
+
+                <div class="text-xs font-inter text-gray-500 uppercase tracking-widest px-4 mb-2 mt-8">Settings</div>
+                <a href="#"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-inter text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                    <i class="ph ph-user text-lg"></i> Profile
+                </a>
+                <a href="#"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-inter text-gray-300 hover:text-white hover:bg-white/5 transition-all">
+                    <i class="ph ph-gear text-lg"></i> Preferences
+                </a>
+
+                <div class="mt-8 border-t border-white/5 pt-4">
+                    <a href="index.html"
+                        class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-inter text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all">
+                        <i class="ph ph-sign-out text-lg"></i> Back to Site
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col h-full overflow-hidden relative">
+
+            <!-- Top Bar -->
+            <header class="h-20 glass-panel border-b border-white/5 flex items-center justify-between px-8 z-20">
+                <div class="flex items-center gap-4 md:hidden">
+                    <button id="mobile-sidebar-toggle" class="text-2xl text-white">
+                        <i class="ph ph-list"></i>
+                    </button>
+                    <span class="font-syne font-bold text-xl">Dashboard</span>
+                </div>
+
+                <div class="hidden md:block">
+                    <div class="relative">
+                        <i class="ph ph-magnifying-glass absolute start-3 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                        <input type="text" placeholder="Search projects..."
+                            class="bg-white/5 border border-white/10 rounded-full ps-10 pe-4 py-2 text-sm font-inter text-white focus:outline-none focus:border-neon-lime/50 w-64 transition-colors">
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <button class="rtl-toggle-btn text-xl hover:text-neon-lime transition-colors hover-lift">
+                        <i class="ph ph-globe"></i>
+                    </button>
+                    <button class="relative text-xl hover:text-white transition-colors">
+                        <i class="ph ph-bell"></i>
+                        <span class="absolute top-0 right-0 -mt-1 -mr-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                    </button>
+                    <div class="flex items-center gap-3 border-s border-white/10 ps-6">
+                        <div class="text-right hidden sm:block">
+                            <div class="text-sm font-bold font-syne">Alex R.</div>
+                            <div class="text-xs text-gray-500 font-inter">Premium Client</div>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-full bg-neon-lime/20 border border-neon-lime/30 flex items-center justify-center text-neon-lime font-bold">
+                            AR
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="flex-1 overflow-y-auto p-4 md:p-8 pb-24">
+                <div class="max-w-6xl mx-auto">
+
+                    <!-- Welcome -->
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+                        <div>
+                            <h1 class="text-3xl font-syne font-bold mb-1">Welcome back, Alex</h1>
+                            <p class="text-gray-400 font-inter text-sm">Here's what's happening with your projects
+                                today.</p>
+                        </div>
+                        <button
+                            class="px-6 py-2 bg-neon-lime text-matte-black rounded-lg text-sm font-syne font-bold hover:bg-white hover-lift transition-all flex items-center gap-2">
+                            <i class="ph ph-plus"></i> New Request
+                        </button>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <!-- Stat 1 -->
+                        <div class="glass-panel p-6 rounded-2xl relative overflow-hidden group">
+                            <div
+                                class="absolute right-0 top-0 p-6 opacity-10 group-hover:scale-110 transition-transform duration-500">
+                                <i class="ph ph-folder-notch text-6xl text-neon-lime"></i>
+                            </div>
+                            <div class="relative z-10">
+                                <div class="text-gray-400 font-inter text-sm mb-2">Active Projects</div>
+                                <div class="text-4xl font-syne font-bold">3</div>
+                                <div
+                                    class="mt-4 flex items-center gap-2 text-xs text-green-400 bg-green-400/10 px-2 py-1 rounded inline-flex">
+                                    <i class="ph ph-trend-up"></i> On Track
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Stat 2 -->
+                        <div class="glass-panel p-6 rounded-2xl relative overflow-hidden group">
+                            <div
+                                class="absolute right-0 top-0 p-6 opacity-10 group-hover:scale-110 transition-transform duration-500">
+                                <i class="ph ph-clock text-6xl text-purple-400"></i>
+                            </div>
+                            <div class="relative z-10">
+                                <div class="text-gray-400 font-inter text-sm mb-2">Hours Logged</div>
+                                <div class="text-4xl font-syne font-bold">124</div>
+                                <div
+                                    class="mt-4 flex items-center gap-2 text-xs text-purple-400 bg-purple-400/10 px-2 py-1 rounded inline-flex">
+                                    <i class="ph ph-lightning"></i> +12 this week
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Stat 3 -->
+                        <div class="glass-panel p-6 rounded-2xl relative overflow-hidden group">
+                            <div
+                                class="absolute right-0 top-0 p-6 opacity-10 group-hover:scale-110 transition-transform duration-500">
+                                <i class="ph ph-receipt text-6xl text-blue-400"></i>
+                            </div>
+                            <div class="relative z-10">
+                                <div class="text-gray-400 font-inter text-sm mb-2">Total Invoiced</div>
+                                <div class="text-4xl font-syne font-bold">$12.5k</div>
+                                <div class="mt-4 flex items-center gap-2 text-xs text-gray-400">
+                                    Next invoice: Oct 1st
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Layout: Projects & Activity -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                        <!-- Projects List -->
+                        <div class="lg:col-span-2 space-y-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h2 class="text-xl font-syne font-bold">Active Projects</h2>
+                                <a href="#" class="text-sm text-neon-lime hover:underline">View All</a>
+                            </div>
+
+                            <!-- Project Card 1 -->
+                            <div
+                                class="glass-panel p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-colors">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center text-2xl">
+                                            💻
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold font-syne text-lg">Fintech Dashboard</h3>
+                                            <p class="text-xs text-gray-400">Frontend Development</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20">
+                                        In Progress
+                                    </div>
+                                </div>
+                                <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden mb-4">
+                                    <div class="bg-blue-500 h-full rounded-full" style="width: 65%"></div>
+                                </div>
+                                <div class="flex justify-between items-center text-xs text-gray-400 font-inter">
+                                    <span>Milestone 3/5</span>
+                                    <span>Allows: 2 days left</span>
+                                </div>
+                            </div>
+
+                            <!-- Project Card 2 -->
+                            <div
+                                class="glass-panel p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-colors">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="w-12 h-12 rounded-lg bg-gray-800 flex items-center justify-center text-2xl">
+                                            🎨
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold font-syne text-lg">Neon Brand Identity</h3>
+                                            <p class="text-xs text-gray-400">Design System</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-bold border border-orange-500/20">
+                                        Review
+                                    </div>
+                                </div>
+                                <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden mb-4">
+                                    <div class="bg-orange-500 h-full rounded-full" style="width: 90%"></div>
+                                </div>
+                                <div class="flex justify-between items-center text-xs text-gray-400 font-inter">
+                                    <span>Final Polish</span>
+                                    <span>Waiting for approval</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Activity Feed -->
+                        <div class="lg:col-span-1">
+                            <h2 class="text-xl font-syne font-bold mb-6">Recent Activity</h2>
+                            <div class="space-y-6 relative">
+                                <!-- Line -->
+                                <div class="absolute left-3.5 top-2 bottom-2 w-px bg-white/10"></div>
+
+                                <!-- Item 1 -->
+                                <div class="flex gap-4 relative">
+                                    <div
+                                        class="w-7 h-7 rounded-full bg-matte-black border border-neon-lime z-10 flex items-center justify-center flex-shrink-0">
+                                        <div class="w-2 h-2 rounded-full bg-neon-lime"></div>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-300">Deployed v2.4.0 to production</p>
+                                        <p class="text-xs text-gray-500 mt-1">2 hours ago</p>
+                                    </div>
+                                </div>
+
+                                <!-- Item 2 -->
+                                <div class="flex gap-4 relative">
+                                    <div
+                                        class="w-7 h-7 rounded-full bg-matte-black border border-blue-500 z-10 flex items-center justify-center flex-shrink-0">
+                                        <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-300">Uploaded new mockups for Review</p>
+                                        <p class="text-xs text-gray-500 mt-1">Yesterday</p>
+                                    </div>
+                                </div>
+
+                                <!-- Item 3 -->
+                                <div class="flex gap-4 relative">
+                                    <div
+                                        class="w-7 h-7 rounded-full bg-matte-black border border-purple-500 z-10 flex items-center justify-center flex-shrink-0">
+                                        <div class="w-2 h-2 rounded-full bg-purple-500"></div>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-300">Milestone "Core Features" completed</p>
+                                        <p class="text-xs text-gray-500 mt-1">Dec 10, 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Maintenance Card -->
+                            <div
+                                class="mt-8 glass-panel p-6 rounded-2xl bg-gradient-to-br from-purple-900/20 to-transparent border border-purple-500/20">
+                                <i class="ph ph-shield-check text-3xl text-purple-400 mb-2"></i>
+                                <h3 class="font-bold font-syne mb-1">System Healthy</h3>
+                                <p class="text-xs text-gray-400 mb-4">All services running smoothly. Next maintenance
+                                    window in 5 days.</p>
+                                <button
+                                    class="w-full py-2 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-bold transition-colors">View
+                                    Status Page</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/rtl-toggle.js"></script>
+    <script>
+        // Simple Mobile Sidebar Toggle
+        const mobileToggle = document.getElementById('mobile-sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const html = document.documentElement;
+        let isMenuOpen = false;
+
+        function getDirection() {
+            return html.getAttribute('dir') || 'ltr';
+        }
+
+        function setMobileSidebarState() {
+            // Only apply mobile logic if screen is small
+            if (window.innerWidth >= 768) {
+                // Reset manual styles for desktop
+                sidebar.classList.remove('-translate-x-full', 'translate-x-full', 'left-0', 'right-0');
+                sidebar.classList.add('md:translate-x-0');
+                return;
+            }
+
+            const dir = getDirection();
+            sidebar.classList.remove('md:translate-x-0'); // Ensure this doesn't conflict
+
+            // Set positioning based on direction
+            sidebar.classList.remove('left-0', 'right-0');
+            if (dir === 'rtl') {
+                sidebar.classList.add('right-0');
+            } else {
+                sidebar.classList.add('left-0');
+            }
+
+            // Set transform based on open state
+            if (!isMenuOpen) {
+                // Closed state (Off-screen)
+                sidebar.classList.remove('translate-x-0');
+                if (dir === 'rtl') {
+                    sidebar.classList.add('translate-x-full');
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            } else {
+                // Open state (On-screen)
+                sidebar.classList.remove('-translate-x-full', 'translate-x-full');
+                sidebar.classList.add('translate-x-0');
+            }
+        }
+
+        // Initial setup
+        setMobileSidebarState();
+
+        // Handle Resize
+        window.addEventListener('resize', () => {
+            setMobileSidebarState();
+        });
+
+        // Handle Direction Change (Observer)
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === "attributes" && mutation.attributeName === "dir") {
+                    setMobileSidebarState();
+                }
+            });
+        });
+        observer.observe(html, { attributes: true });
+
+        // Toggle Click
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+                setMobileSidebarState();
+            });
+        }
+    </script>
+</body>
+
+</html>
