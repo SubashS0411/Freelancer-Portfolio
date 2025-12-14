@@ -2,19 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleBtns = document.querySelectorAll('.rtl-toggle-btn');
     const body = document.body;
     const html = document.documentElement;
-    const wipeOverlay = document.createElement('div');
+    const existingOverlay = document.querySelector('.wipe-overlay');
+    const wipeOverlay = existingOverlay || document.createElement('div');
 
-    wipeOverlay.className = 'wipe-overlay';
-    body.appendChild(wipeOverlay);
-
-    // Initial State Check
-    if (localStorage.getItem('direction') === 'rtl') {
-        setRTL(false);
-    } else {
-        setLTR(false);
+    if (!existingOverlay) {
+        wipeOverlay.className = 'wipe-overlay';
+        body.appendChild(wipeOverlay);
     }
 
+    const savedDirection = localStorage.getItem('direction') === 'rtl' ? 'rtl' : 'ltr';
+    applyDirection(savedDirection, false);
+
     toggleBtns.forEach(btn => {
+        btn.setAttribute('aria-pressed', savedDirection === 'rtl');
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const isRTL = html.getAttribute('dir') === 'rtl';
@@ -26,34 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add('wiping-active');
 
         setTimeout(() => {
-            if (targetDir === 'rtl') {
-                setRTL(true);
-            } else {
-                setLTR(true);
-            }
-        }, 300); // Wait for half animation
+            applyDirection(targetDir, true);
+        }, 250);
 
         setTimeout(() => {
             body.classList.remove('wiping-active');
-        }, 600); // Full duration
+        }, 600);
     }
 
-    function setRTL(save) {
-        html.setAttribute('dir', 'rtl');
-        html.classList.add('rtl');
-        // If we need specific DOM order swapping that flex-direction doesn't cover, do it here.
-        // For now, relying on dir="rtl" + flexbox behavior.
-        // Also handling mobile menu slide direction if needed (CSS classes).
-        if (save) localStorage.setItem('direction', 'rtl');
-        if (save) localStorage.setItem('direction', 'rtl');
+    function applyDirection(dir, persist) {
+        const isRTL = dir === 'rtl';
+        html.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+        html.classList.toggle('rtl', isRTL);
+        toggleBtns.forEach(btn => btn.setAttribute('aria-pressed', isRTL));
+        if (persist) localStorage.setItem('direction', dir);
     }
-
-    function setLTR(save) {
-        html.setAttribute('dir', 'ltr');
-        html.classList.remove('rtl');
-        if (save) localStorage.setItem('direction', 'ltr');
-        if (save) localStorage.setItem('direction', 'ltr');
-    }
-
-
 });
