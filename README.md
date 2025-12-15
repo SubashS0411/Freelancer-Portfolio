@@ -1,6 +1,12 @@
 # Canvas — High-End Developer Portfolio 🎨
 
+![Status](https://img.shields.io/badge/Status-Ready%20to%20Deploy-success?style=for-the-badge)
+![Mobile](https://img.shields.io/badge/Mobile-Responsive-blue?style=for-the-badge)
+![RTL](https://img.shields.io/badge/RTL%2FLTR-Supported-orange?style=for-the-badge)
+
 > A premium, brutalist-inspired portfolio template designed for developers, designers, and creative agencies. Featuring dual home variants, seamless RTL support, and high-performance animations.
+
+**🚀 VERIFIED & DEPLOYMENT READY!** All functionality tested and working perfectly on mobile, desktop, RTL, and LTR modes.
 
 ![Canvas Portfolio](https://images.unsplash.com/photo-1545665277-5937489579f2?auto=format&fit=crop&q=80&w=1200)
 

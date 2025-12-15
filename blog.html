@@ -31,7 +31,7 @@
         }
     </script>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="js/phosphor-icons.js"></script>
 </head>
 
 <body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden">
@@ -40,51 +40,50 @@
     <nav class="fixed top-0 md:top-6 left-0 right-0 z-50 px-0 md:px-12">
         <div
             class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border-b border-white/20 md:border md:border-white/20 rounded-none md:rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
-            <!-- Logo / Home Dropdown -->
-            <div class="relative group z-50">
-                <button
-                    class="flex items-center gap-1 font-syne font-bold text-xl md:text-2xl tracking-tighter hover:text-accent transition-colors">
-                    Home <i class="ph ph-caret-down text-base"></i>
-                </button>
-                <div
-                    class="dropdown-menu absolute top-full left-0 mt-4 w-48 bg-white/90 backdrop-blur-xl border border-black/10 rounded-xl p-2 shadow-2xl flex flex-col gap-1 z-50">
-                    <a href="index.html"
-                        class="px-4 py-2 hover:bg-black/5 rounded-lg font-inter text-sm font-medium flex justify-between items-center group/item text-deep-black">
-                        Home V1 <i
-                            class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
-                    </a>
-                    <a href="index2.html"
-                        class="px-4 py-2 hover:bg-black/5 rounded-lg font-inter text-sm font-medium flex justify-between items-center group/item text-deep-black">
-                        Home V2 <i
-                            class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
-                    </a>
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-accent to-purple-600 rounded-xl flex items-center justify-center shadow-lg p-2">
+                    <img src="favicon.svg" alt="Logo" class="w-full h-full object-contain">
                 </div>
+                <span class="hidden md:block font-syne font-bold text-xl tracking-tight">Freelancer</span>
             </div>
             <div class="hidden md:flex items-center gap-8 font-inter text-sm font-medium">
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover-line hover:text-accent transition-colors">
+                        Home <i class="ph ph-caret-down text-xs"></i>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 mt-4 w-40 bg-white/90 backdrop-blur-xl border border-black/10 rounded-xl p-2 shadow-2xl flex flex-col gap-1">
+                        <a href="index.html" class="px-4 py-2 hover:bg-black/5 rounded-lg text-sm font-medium flex justify-between items-center group/item text-deep-black">
+                            Home V1 <i class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                        </a>
+                        <a href="index2.html" class="px-4 py-2 hover:bg-black/5 rounded-lg text-sm font-medium flex justify-between items-center group/item text-deep-black">
+                            Home V2 <i class="ph ph-arrow-right opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                        </a>
+                    </div>
+                </div>
                 <a href="portfolio.html" class="hover:text-accent transition-colors">Work</a>
-                <a href="index2.html" class="hover:text-accent transition-colors">Services</a>
+                <a href="services.html" class="hover:text-accent transition-colors">Services</a>
                 <a href="blog.html" class="text-accent font-bold transition-colors">Notes</a>
             </div>
             <div class="hidden md:flex items-center gap-4">
                 <a href="contact.html"
                     class="px-6 py-2 bg-deep-black text-white rounded-full text-sm font-syne font-bold hover:bg-accent transition-colors">Let's
                     Talk</a>
-                <button
-                    class="rtl-toggle-btn text-sm font-bold border border-deep-black/10 px-3 py-1 rounded-full hover:bg-white/50 transition-colors">RTL</button>
+                <button class="rtl-toggle-btn text-xl hover:text-accent transition-colors hover-lift"><i
+                        class="ph ph-globe"></i></button>
             </div>
             <button id="mobile-menu-btn" class="md:hidden text-2xl"><i class="ph ph-list"></i></button>
         </div>
     </nav>
-    <div id="mobile-menu" class="fixed inset-0 bg-off-white z-40 flex flex-col items-center justify-center gap-6 text-xl font-syne font-bold transition-transform duration-500 -translate-y-full">
+    <div id="mobile-menu" class="fixed inset-0 bg-off-white z-[60] flex flex-col items-center justify-center gap-6 text-xl font-syne font-bold transition-transform duration-500 -translate-y-full">
         <div class="flex flex-col items-center gap-2 w-full">
              <button class="mobile-dropdown-trigger flex items-center gap-2">Home <i class="ph ph-caret-down transition-transform"></i></button>
-             <div class="hidden flex flex-col items-center gap-2 text-base text-gray-500 font-inter">
+             <div class="hidden flex-col items-center gap-2 text-base text-gray-500 font-inter">
                  <a href="index.html">Home V1</a>
                  <a href="index2.html">Home V2</a>
              </div>
         </div>
         <a href="portfolio.html">Work</a>
-        <a href="#" class="text-accent">Dashboard</a>
         <a href="services.html">Services</a>
         <a href="about.html">Notes</a>
         <a href="contact.html">Contact</a>
@@ -124,7 +123,7 @@
                         <!-- Article 1 -->
                         <article class="group cursor-pointer reveal-up">
                             <div class="mb-6 overflow-hidden rounded-2xl">
-                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200"
+                                <img src="https://placehold.co/1200x800/4f46e5/white?text=Frontend+Architecture"
                                     alt="Article Cover"
                                     class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105">
                             </div>

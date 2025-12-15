@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTypewriter();
     initContactForm();
     initMobileDropdowns();
+    initNavbarDropdown();
     initScrollReveal();
 });
 
@@ -25,16 +26,77 @@ function initScrollReveal() {
 
 
 function initMobileDropdowns() {
-    // If we implement a click toggle for mobile submenus
+    // Handle mobile submenu toggles
     const mobileDropdownTriggers = document.querySelectorAll('.mobile-dropdown-trigger');
     mobileDropdownTriggers.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
+            e.stopPropagation();
             const target = btn.nextElementSibling;
-            if (target) target.classList.toggle('hidden');
+            if (target) {
+                // Toggle hidden class and ensure proper display
+                if (target.classList.contains('hidden')) {
+                    target.classList.remove('hidden');
+                    target.classList.add('flex');
+                } else {
+                    target.classList.add('hidden');
+                    target.classList.remove('flex');
+                }
+            }
             const icon = btn.querySelector('i');
             if (icon) icon.classList.toggle('rotate-180');
         });
+    });
+}
+
+function initNavbarDropdown() {
+    // Make navbar Home dropdown work on mobile (touch devices)
+    const navbarGroups = document.querySelectorAll('nav .relative.group');
+    
+    navbarGroups.forEach(group => {
+        const btn = group.querySelector('button');
+        const menu = group.querySelector('.dropdown-menu');
+        
+        if (btn && menu) {
+            let isOpen = false;
+            
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Close other dropdowns
+                navbarGroups.forEach(otherGroup => {
+                    if (otherGroup !== group) {
+                        const otherMenu = otherGroup.querySelector('.dropdown-menu');
+                        if (otherMenu) {
+                            otherMenu.style.transform = 'scaleY(0)';
+                            otherMenu.style.opacity = '0';
+                        }
+                    }
+                });
+                
+                // Toggle current dropdown
+                if (isOpen) {
+                    menu.style.transform = 'scaleY(0)';
+                    menu.style.opacity = '0';
+                    isOpen = false;
+                } else {
+                    menu.style.transform = 'scaleY(1)';
+                    menu.style.opacity = '1';
+                    menu.style.display = 'flex';
+                    isOpen = true;
+                }
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (isOpen && !btn.contains(e.target) && !menu.contains(e.target)) {
+                    menu.style.transform = 'scaleY(0)';
+                    menu.style.opacity = '0';
+                    isOpen = false;
+                }
+            });
+        }
     });
 }
 
