@@ -84,4 +84,4 @@ Open `portfolio.html` and duplicate the `.project-card` blocks. Ensure you updat
 
 ---
 
-© 2024 Canvas Portfolio. Crafted with Precision.
+© 2025 Canvas Portfolio. Crafted with Precision.
