@@ -9,39 +9,62 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        'off-white': '#fbfbfe',
-                        'deep-black': '#050505',
-                        'accent': '#4f46e5',
-                        'matte-black': '#101010',
-                        'neon-lime': '#d9f99d',
-                    },
-                    fontFamily: {
-                        'syne': ['Outfit', 'sans-serif'],
-                        'inter': ['Space Grotesk', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/phosphor-icons.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="bg-black text-white flex flex-col items-center justify-center min-h-screen overflow-hidden">
     <div class="noise-overlay"></div>
 
+    <!-- Navigation -->
     <nav class="fixed top-0 md:top-6 left-0 right-0 z-50 px-0 md:px-12">
         <div
-            class="max-w-7xl mx-auto backdrop-blur-md bg-white/30 border-b border-white/20 md:border md:border-white/20 rounded-none md:rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
-            <!-- Navigation content would go here, e.g., logo, links -->
+            class="max-w-7xl mx-auto backdrop-blur-md bg-white/10 border-b border-white/10 md:border md:border-white/10 rounded-none md:rounded-full px-6 py-4 flex justify-between items-center shadow-sm">
+
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-accent to-purple-600 rounded-xl flex items-center justify-center shadow-lg p-2">
+                    <img src="favicon.svg" alt="Logo" class="w-full h-full object-contain">
+                </div>
+                <span class="hidden md:block font-syne font-bold text-xl tracking-tight text-white">Freelancer</span>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 font-inter text-sm font-medium text-white">
+                <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+                <a href="portfolio.html" class="hover:text-accent transition-colors">Work</a>
+                <a href="services.html" class="hover:text-accent transition-colors">Services</a>
+                <a href="about.html" class="hover:text-accent transition-colors">Notes</a>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="contact.html"
+                    class="px-6 py-2 bg-white text-black rounded-full text-sm font-syne font-bold hover:bg-accent hover:text-white transition-all">Let's
+                    Talk</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white">
+                <i class="ph ph-list"></i>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-black z-[60] flex flex-col items-center justify-center gap-6 text-xl font-syne font-bold transition-transform duration-500 -translate-y-full text-white">
+        <button id="mobile-menu-close" class="absolute top-6 right-6 text-3xl text-white hover:text-accent transition-colors">
+            <i class="ph ph-x"></i>
+        </button>
+        <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+        <a href="portfolio.html" class="hover:text-accent transition-colors">Work</a>
+        <a href="services.html" class="hover:text-accent transition-colors">Services</a>
+        <a href="about.html" class="hover:text-accent transition-colors">Notes</a>
+        <a href="contact.html" class="hover:text-accent transition-colors">Contact</a>
+    </div>
 
     <h1 class="glitch font-syne font-bold text-8xl md:text-9xl mb-4 text-center" data-text="404">404</h1>
     <p class="font-inter text-gray-400 text-xl md:text-2xl mb-12">Creativity Not Found.</p>
@@ -58,6 +81,7 @@
     </div>
 
     <script src="js/rtl-toggle.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

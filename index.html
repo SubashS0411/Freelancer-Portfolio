@@ -8,33 +8,14 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        'off-white': '#fbfbfe',
-                        'deep-black': '#050505',
-                        'accent': '#4f46e5',
-                        'matte-black': '#101010',
-                        'neon-lime': '#d9f99d',
-                    },
-                    fontFamily: {
-                        'syne': ['Outfit', 'sans-serif'],
-                        'inter': ['Space Grotesk', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="css/tailwind.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/phosphor-icons.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Icons -->
-    <script src="js/phosphor-icons.js"></script>
 </head>
 
 <body class="bg-off-white text-deep-black transition-colors duration-300 antialiased overflow-x-hidden">
@@ -52,8 +33,8 @@
 
             <!-- Logo -->
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-accent to-purple-600 rounded-xl flex items-center justify-center shadow-lg p-2">
-                    <img src="favicon.svg" alt="Logo" class="w-full h-full object-contain">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-accent to-purple-600 rounded-xl flex items-center justify-center shadow-lg p-2 flex-shrink-0">
+                    <img src="favicon.svg" alt="Logo" class="w-full h-full object-contain max-w-full max-h-full">
                 </div>
                 <span class="hidden md:block font-syne font-bold text-xl tracking-tight">Freelancer</span>
             </div>
@@ -97,6 +78,9 @@
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu"
         class="fixed inset-0 bg-off-white z-[60] flex flex-col items-center justify-center gap-6 text-xl font-syne font-bold transition-transform duration-500 -translate-y-full">
+        <button id="mobile-menu-close" class="absolute top-6 right-6 text-3xl text-deep-black hover:text-accent transition-colors">
+            <i class="ph ph-x"></i>
+        </button>
         <div class="flex flex-col items-center gap-2 w-full">
             <button class="mobile-dropdown-trigger flex items-center gap-2">Home <i
                     class="ph ph-caret-down transition-transform"></i></button>
@@ -135,28 +119,28 @@
 
         <!-- Client Roster (New) -->
         <section class="mb-32 reveal-up">
-            <p class="font-mono text-xs text-gray-400 mb-6 uppercase tracking-widest">Trusted by innovative companies</p>
+            <p class="font-mono text-xs text-gray-400 mb-8 uppercase tracking-widest">Trusted by innovative companies</p>
             <div
-                class="flex flex-wrap items-center gap-x-12 gap-y-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                <div class="flex items-center gap-3">
-                    <img src="https://cdn.simpleicons.org/google/4285F4" alt="Google" class="h-8">
-                    <span class="text-xl font-bold font-syne text-gray-700">Google</span>
+                class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <img src="https://cdn.simpleicons.org/google/4285F4" alt="Google" class="h-8 w-8 object-contain flex-shrink-0">
+                    <span class="text-lg md:text-xl font-bold font-syne text-gray-700">Google</span>
                 </div>
-                <div class="flex items-center gap-3">
-                    <img src="https://cdn.simpleicons.org/spotify/1DB954" alt="Spotify" class="h-8">
-                    <span class="text-xl font-bold font-syne text-gray-700">Spotify</span>
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <img src="https://cdn.simpleicons.org/spotify/1DB954" alt="Spotify" class="h-8 w-8 object-contain flex-shrink-0">
+                    <span class="text-lg md:text-xl font-bold font-syne text-gray-700">Spotify</span>
                 </div>
-                <div class="flex items-center gap-3">
-                    <img src="https://cdn.simpleicons.org/nike/000000" alt="Nike" class="h-8">
-                    <span class="text-xl font-bold font-syne text-gray-700">Nike</span>
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <img src="https://cdn.simpleicons.org/nike/000000" alt="Nike" class="h-8 w-8 object-contain flex-shrink-0">
+                    <span class="text-lg md:text-xl font-bold font-syne text-gray-700">Nike</span>
                 </div>
-                <div class="flex items-center gap-3">
-                    <img src="https://cdn.simpleicons.org/airbnb/FF5A5F" alt="Airbnb" class="h-8">
-                    <span class="text-xl font-bold font-syne text-gray-700">Airbnb</span>
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <img src="https://cdn.simpleicons.org/airbnb/FF5A5F" alt="Airbnb" class="h-8 w-8 object-contain flex-shrink-0">
+                    <span class="text-lg md:text-xl font-bold font-syne text-gray-700">Airbnb</span>
                 </div>
-                <div class="flex items-center gap-3">
-                    <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe" class="h-8">
-                    <span class="text-xl font-bold font-syne text-gray-700">Stripe</span>
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe" class="h-8 w-8 object-contain flex-shrink-0">
+                    <span class="text-lg md:text-xl font-bold font-syne text-gray-700">Stripe</span>
                 </div>
             </div>
         </section>
@@ -285,24 +269,24 @@
         <section class="mb-32 reveal-up">
             <h2 class="font-syne font-bold text-3xl mb-12">Words</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <blockquote class="p-8 border-l-2 border-black/10 hover-lift transition-all">
-                    <p class="font-inter text-lg text-gray-600 mb-6">"Transforms complex requirements into elegant code.
+                <blockquote class="p-6 md:p-8 border-l-2 border-black/10 hover-lift transition-all bg-white rounded-r-2xl">
+                    <p class="font-inter text-base md:text-lg text-gray-600 mb-6">"Transforms complex requirements into elegant code.
                         The attention to detail is unmatched."</p>
                     <footer class="flex items-center gap-4">
                         <img src="https://placehold.co/100x100/4f46e5/white?text=AC"
-                            class="w-12 h-12 rounded-full grayscale" alt="Client">
+                            class="w-12 h-12 rounded-full grayscale object-cover flex-shrink-0" alt="Alex Chen">
                         <div>
                             <div class="font-syne font-bold">Alex Chen</div>
                             <div class="text-xs font-inter text-gray-400">CTO, FintechGlobal</div>
                         </div>
                     </footer>
                 </blockquote>
-                <blockquote class="p-8 border-l-2 border-black/10 hover-lift transition-all">
-                    <p class="font-inter text-lg text-gray-600 mb-6">"A rare combination of design sensibility and
+                <blockquote class="p-6 md:p-8 border-l-2 border-black/10 hover-lift transition-all bg-white rounded-r-2xl">
+                    <p class="font-inter text-base md:text-lg text-gray-600 mb-6">"A rare combination of design sensibility and
                         engineering rigor. Highly recommended."</p>
                     <footer class="flex items-center gap-4">
                         <img src="https://placehold.co/100x100/d9f99d/000?text=SJ"
-                            class="w-12 h-12 rounded-full grayscale" alt="Client">
+                            class="w-12 h-12 rounded-full grayscale object-cover flex-shrink-0" alt="Sarah Jones">
                         <div>
                             <div class="font-syne font-bold">Sarah Jones</div>
                             <div class="text-xs font-inter text-gray-400">Director, ArtMuseum</div>
@@ -336,6 +320,37 @@
                 <span class="group-hover:ml-12 transition-all duration-500">Tell me everything.</span>
             </h2>
         </a>
+
+        <!-- Footer Links Section -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mt-24 mb-12">
+            <div class="space-y-4">
+                <h4 class="font-syne font-bold text-lg">Sitemap</h4>
+                <ul class="space-y-2 font-inter text-gray-500">
+                    <li><a href="index.html" class="hover:text-deep-black transition-colors">Home</a></li>
+                    <li><a href="portfolio.html" class="hover:text-deep-black transition-colors">Work</a></li>
+                    <li><a href="services.html" class="hover:text-deep-black transition-colors">Services</a></li>
+                    <li><a href="about.html" class="hover:text-deep-black transition-colors">About</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="font-syne font-bold text-lg">Socials</h4>
+                <ul class="space-y-2 font-inter text-gray-500">
+                    <li><a href="#" class="hover:text-deep-black transition-colors">LinkedIn</a></li>
+                    <li><a href="#" class="hover:text-deep-black transition-colors">Twitter</a></li>
+                    <li><a href="#" class="hover:text-deep-black transition-colors">Instagram</a></li>
+                    <li><a href="#" class="hover:text-deep-black transition-colors">Dribbble</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4 md:col-span-2">
+                <h4 class="font-syne font-bold text-lg">Newsletter</h4>
+                <p class="font-inter text-gray-500 mb-4">Subscribe to get the latest updates and news.</p>
+                <form class="flex gap-2">
+                    <input type="email" placeholder="Email address" class="w-full px-4 py-2 bg-white border border-black/10 rounded-lg focus:outline-none focus:border-deep-black transition-colors">
+                    <button type="submit" class="px-6 py-2 bg-deep-black text-white rounded-lg font-syne font-bold hover:bg-accent transition-colors">Join</button>
+                </form>
+            </div>
+        </div>
+
         <div
             class="flex justify-between items-end mt-12 border-t border-black/10 pt-8 font-inter text-sm text-gray-500">
             <div>&copy; 2024 Canvas Portfolio.</div>

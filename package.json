@@ -1,0 +1,27 @@
+{
+  "name": "freelance-portfolio",
+  "version": "1.0.0",
+  "description": "![Status](https://img.shields.io/badge/Status-Ready%20to%20Deploy-success?style=for-the-badge)\r ![Mobile](https://img.shields.io/badge/Mobile-Responsive-blue?style=for-the-badge)\r ![RTL](https://img.shields.io/badge/RTL%2FLTR-Supported-orange?style=for-the-badge)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SubashS0411/-Freelancer-Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SubashS0411/-Freelancer-Portfolio/issues"
+  },
+  "homepage": "https://github.com/SubashS0411/-Freelancer-Portfolio#readme",
+  "devDependencies": {
+    "@fontsource/outfit": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
+    "@fontsource/tajawal": "^5.2.7",
+    "@phosphor-icons/web": "^2.1.2",
+    "tailwindcss": "^3.4.14"
+  }
+}

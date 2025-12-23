@@ -1,5 +1,29 @@
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap');
+/* Fonts are self-hosted via css/fonts.css */
+
+/* Global Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Inline images within flex containers */
+.flex img,
+.inline-flex img {
+    display: inline-block;
+}
+
+/* Avatar/Profile Images */
+img[class*="rounded-full"] {
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+/* Logo Images */
+img[alt="Logo"],
+img[alt*="logo"] {
+    object-fit: contain;
+}
 
 /* RTL Font Support */
 [dir="rtl"] body,
@@ -342,6 +366,16 @@ h6 {
     perspective: 600px;
 }
 
+.hero-text-panel {
+    position: relative;
+    z-index: 2;
+}
+
+.home2-hero-scene {
+    position: relative;
+    z-index: 1;
+}
+
 @media (min-width: 640px) {
     .scene {
         width: 200px;
@@ -362,6 +396,39 @@ h6 {
     position: relative;
     transform-style: preserve-3d;
     animation: rotateCube 10s infinite linear;
+}
+
+@media (max-width: 768px) {
+    .cube {
+        animation: rotateCube 120s infinite linear;
+    }
+
+    .hero-text-panel {
+        background: rgba(5, 5, 5, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.55);
+    }
+
+    .home2-hero-scene {
+        margin-top: 1.5rem;
+    }
+}
+
+/* Hide the cube completely on mobile phones */
+@media (max-width: 640px) {
+    .scene,
+    .cube,
+    .home2-hero-scene {
+        display: none !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cube {
+        animation: none;
+    }
 }
 
 .cube__face {

@@ -204,21 +204,24 @@ function initTypewriter() {
 function initMobileMenu() {
     const menuBtn = document.querySelector('#mobile-menu-btn');
     const mobileMenu = document.querySelector('#mobile-menu');
+    const closeBtn = document.querySelector('#mobile-menu-close');
 
     if (menuBtn && mobileMenu) {
+        // Open menu
         menuBtn.addEventListener('click', () => {
-            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.remove('-translate-y-full');
+            mobileMenu.classList.add('translate-y-0');
+            menuBtn.setAttribute('aria-expanded', 'true');
+        });
 
-            // Toggle Translate Classes (Support top-down)
-            if (mobileMenu.classList.contains('-translate-y-full')) {
-                mobileMenu.classList.remove('-translate-y-full');
-                mobileMenu.classList.add('translate-y-0');
-            } else {
+        // Close menu via close button
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
                 mobileMenu.classList.add('-translate-y-full');
                 mobileMenu.classList.remove('translate-y-0');
-            }
-        });
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
+        }
 
         // Close on Link Click
         const links = mobileMenu.querySelectorAll('a');
