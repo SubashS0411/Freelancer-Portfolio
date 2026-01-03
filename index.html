@@ -98,7 +98,7 @@
 
 
     <!-- Main Content -->
-    <main class="pt-32 min-h-screen px-4 md:px-12 max-w-7xl mx-auto">
+    <main class="page-shell pt-32 min-h-screen px-4 md:px-12 max-w-7xl mx-auto">
 
         <!-- Hero Section -->
         <section class="h-[90vh] flex flex-col justify-center items-start mb-24 relative">
@@ -216,51 +216,123 @@
             </div>
         </section>
 
-        <!-- Selected Work (List View) -->
-        <section class="mb-32">
-            <div class="flex items-center justify-between mb-12 border-b border-black/10 pb-4">
-                <span class="font-inter text-sm uppercase tracking-widest text-gray-400">Selected Work (2023-24)</span>
-                <span class="font-inter text-sm text-gray-400">04</span>
+        <!-- Results / Highlights -->
+        <section class="mb-32 reveal-up">
+            <div class="flex items-center justify-between mb-10">
+                <h2 class="font-syne font-bold text-3xl">Recent Wins</h2>
+                <span class="text-sm font-mono text-gray-500 uppercase tracking-widest">2023 - 2025</span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="p-6 bg-white border border-black/10 rounded-2xl shadow-sm">
+                    <div class="text-4xl font-syne font-bold text-deep-black">+42%</div>
+                    <p class="text-sm text-gray-500 font-inter">Checkout conversion lift for a Shopify brand.</p>
+                </div>
+                <div class="p-6 bg-white border border-black/10 rounded-2xl shadow-sm">
+                    <div class="text-4xl font-syne font-bold text-deep-black">98</div>
+                    <p class="text-sm text-gray-500 font-inter">Core Web Vitals score on a Next.js relaunch.</p>
+                </div>
+                <div class="p-6 bg-white border border-black/10 rounded-2xl shadow-sm">
+                    <div class="text-4xl font-syne font-bold text-deep-black">3.1x</div>
+                    <p class="text-sm text-gray-500 font-inter">Increase in demo bookings after redesign.</p>
+                </div>
+                <div class="p-6 bg-white border border-black/10 rounded-2xl shadow-sm">
+                    <div class="text-4xl font-syne font-bold text-deep-black">12ms</div>
+                    <p class="text-sm text-gray-500 font-inter">Server response after edge caching rollout.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Case Study -->
+        <section class="mb-32 reveal-up grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-4 order-2 md:order-1">
+                <p class="font-mono text-xs text-gray-500 uppercase tracking-widest">Case Study</p>
+                <h3 class="font-syne font-bold text-4xl md:text-5xl leading-tight">Fintech dashboard that cut churn by 18%</h3>
+                <p class="font-inter text-gray-600 text-base md:text-lg leading-relaxed">I rebuilt a multi-tenant analytics platform with a design system, role-based access, and real-time metrics. The release reduced onboarding time from 14 days to 3.</p>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-inter text-sm text-gray-700">
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-deep-black rounded-full"></span>Design system (48 components)</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-deep-black rounded-full"></span>Role-based dashboards</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-deep-black rounded-full"></span>Audit trails & exports</li>
+                    <li class="flex items-center gap-2"><span class="w-2 h-2 bg-deep-black rounded-full"></span>99.95% uptime SLO</li>
+                </ul>
+                <div class="flex flex-wrap gap-3">
+                    <a href="portfolio.html" class="btn-pill primary">View project</a>
+                    <a href="services.html" class="btn-pill ghost">Process</a>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 rounded-3xl overflow-hidden shadow-xl border border-black/10">
+                <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80" alt="Fintech dashboard preview" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <!-- Selected Work (Grid) -->
+        <section class="mb-32 reveal-up">
+            <div class="flex items-center justify-between mb-10">
+                <div>
+                    <p class="font-mono text-xs text-gray-500 uppercase tracking-widest">Selected Work</p>
+                    <h2 class="font-syne font-bold text-3xl">Shipping fast, looking sharp</h2>
+                </div>
+                <a href="portfolio.html" class="inline-flex items-center gap-2 text-sm font-inter text-gray-600 hover:text-deep-black transition-colors">View all <i class="ph ph-arrow-up-right"></i></a>
             </div>
 
-            <div class="flex flex-col">
-                <!-- Project Item 1 -->
-                <a href="portfolio.html"
-                    class="hover-reveal group flex items-baseline justify-between py-12 border-b border-black/10 hover:border-black transition-colors"
-                    data-img="https://placehold.co/600x400/4f46e5/white?text=Fintech+Dashboard">
-                    <h2
-                        class="text-4xl md:text-6xl font-syne font-bold group-hover:translate-x-4 transition-transform duration-300">
-                        Fintech Dashboard</h2>
-                    <span class="font-inter text-gray-400">Development</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <a href="portfolio.html" class="group relative block rounded-3xl overflow-hidden premium-card">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80" alt="Banking analytics interface" class="transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <span class="premium-chip text-gray-700">Fintech</span>
+                            <h3 class="font-syne font-bold text-2xl mt-2">Nova Bank</h3>
+                            <p class="text-sm text-gray-600 font-inter">Dashboard rebuild with real-time risk scoring and auditability.</p>
+                        </div>
+                        <span class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-deep-black group-hover:bg-deep-black group-hover:text-white transition-colors"><i class="ph ph-arrow-up-right"></i></span>
+                    </div>
                 </a>
 
-                <!-- Project Item 2 -->
-                <a href="portfolio.html"
-                    class="hover-reveal group flex items-baseline justify-between py-12 border-b border-black/10 hover:border-black transition-colors"
-                    data-img="https://placehold.co/600x400/d9f99d/000?text=Neon+Brand">
-                    <h2
-                        class="text-4xl md:text-6xl font-syne font-bold group-hover:translate-x-4 transition-transform duration-300">
-                        Neon Brand</h2>
-                    <span class="font-inter text-gray-400">Identity / Web</span>
+                <!-- Card 2 -->
+                <a href="portfolio.html" class="group relative block rounded-3xl overflow-hidden premium-card">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&w=1200&q=80" alt="E-commerce product gallery" class="transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <span class="premium-chip text-gray-700">E-Commerce</span>
+                            <h3 class="font-syne font-bold text-2xl mt-2">Lumina</h3>
+                            <p class="text-sm text-gray-600 font-inter">Headless storefront with 3D configurator and instant search.</p>
+                        </div>
+                        <span class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-deep-black group-hover:bg-deep-black group-hover:text-white transition-colors"><i class="ph ph-arrow-up-right"></i></span>
+                    </div>
                 </a>
 
-                <!-- Project Item 3 -->
-                <a href="portfolio.html"
-                    class="hover-reveal group flex items-baseline justify-between py-12 border-b border-black/10 hover:border-black transition-colors"
-                    data-img="https://placehold.co/600x400/c084fc/white?text=Arkitect+Studio">
-                    <h2
-                        class="text-4xl md:text-6xl font-syne font-bold group-hover:translate-x-4 transition-transform duration-300">
-                        Arkitect Studio</h2>
-                    <span class="font-inter text-gray-400">Design</span>
+                <!-- Card 3 -->
+                <a href="portfolio.html" class="group relative block rounded-3xl overflow-hidden premium-card">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="SaaS web application" class="transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <span class="premium-chip text-gray-700">SaaS</span>
+                            <h3 class="font-syne font-bold text-2xl mt-2">Velvet</h3>
+                            <p class="text-sm text-gray-600 font-inter">Collaboration suite with offline sync and multiplayer editing.</p>
+                        </div>
+                        <span class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-deep-black group-hover:bg-deep-black group-hover:text-white transition-colors"><i class="ph ph-arrow-up-right"></i></span>
+                    </div>
                 </a>
-                <!-- Project Item 4 -->
-                <a href="portfolio.html"
-                    class="hover-reveal group flex items-baseline justify-between py-12 border-b border-black/10 hover:border-black transition-colors"
-                    data-img="https://placehold.co/600x400/6366f1/white?text=Velvet+App">
-                    <h2
-                        class="text-4xl md:text-6xl font-syne font-bold group-hover:translate-x-4 transition-transform duration-300">
-                        Velvet App</h2>
-                    <span class="font-inter text-gray-400">Mobile</span>
+
+                <!-- Card 4 -->
+                <a href="portfolio.html" class="group relative block rounded-3xl overflow-hidden premium-card">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80" alt="Mobile app showcase" class="transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <span class="premium-chip text-gray-700">Mobile</span>
+                            <h3 class="font-syne font-bold text-2xl mt-2">Arkitect</h3>
+                            <p class="text-sm text-gray-600 font-inter">Design-first mobile app with adaptive theming and motion.</p>
+                        </div>
+                        <span class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-deep-black group-hover:bg-deep-black group-hover:text-white transition-colors"><i class="ph ph-arrow-up-right"></i></span>
+                    </div>
                 </a>
             </div>
         </section>
